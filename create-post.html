@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Post</title>
+    <link href="./dist/styles.css" rel="stylesheet" />
+    <link
+      href="https://cdn.quilljs.com/1.3.7/quill.snow.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+  </head>
+  <body class="bg-gray-100">
+    <nav class="bg-blue-900 border-b border-gray-300">
+      <div
+        class="max-w-screen-lg mx-auto flex justify-between items-center py-4 md:px-0 px-4"
+      >
+        <a href="my-accout.html" class="text-xl font-semibold text-white"
+          >Brand Name</a
+        >
+        <div class="flex items-center">
+          <div class="me-8">
+            <button>
+              <a
+                href="create-post.html"
+                class="block px-4 py-0.5 font-semibold rounded-lg text-blue-900 text-lg bg-white"
+                >Add Post</a
+              >
+            </button>
+          </div>
+          <div class="relative">
+            <button
+              id="dropdownButton"
+              class="flex items-center focus:outline-none bg-white rounded-lg"
+              onclick="toggleDropdown()"
+            >
+              <img
+                src="/image/profile.png"
+                alt="Profile Icon"
+                class="w-10 h-10 rounded-full"
+              />
+            </button>
+            <ul
+              id="dropdownMenu"
+              class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg opacity-0 invisible transition-opacity duration-200"
+            >
+              <li>
+                <a
+                  href="my-accout.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >My Account</a
+                >
+              </li>
+              <li>
+                <a
+                  href="buy-cradit.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Buy Credit</a
+                >
+              </li>
+              <li>
+                <a
+                  href="update-profile.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Update Profile</a
+                >
+              </li>
+              <li>
+                <a
+                  href="create-post.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Add Post</a
+                >
+              </li>
+              <li>
+                <a
+                  href="user.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Users</a
+                >
+              </li>
+              <li>
+                <a
+                  href="transaction.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Transaction</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact-us.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="privacy-policy.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="login.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Logout</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="md:px-0 px-4 md:mt-6 mt-4">
+      <div class="max-w-2xl mx-auto bg-blue-100 md:p-8 p-4 rounded shadow-md">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6">Create Post</h1>
+
+        <!-- Post Title -->
+        <div class="mb-4">
+          <label
+            for="post-title"
+            class="block text-md font-medium text-blue-900 mb-2"
+            >Title</label
+          >
+          <input
+            type="text"
+            id="post-title"
+            name="post-title"
+            class="block bg-gray-50 appearance-none border rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Enter post title"
+          />
+        </div>
+        <div class="mb-4 items-center">
+          <label
+            for="location"
+            class="block text-md font-medium text-blue-900 mr-4"
+            >Location</label
+          >
+          <div class="md:flex items-center mt-2">
+            <input
+              type="text"
+              id="location"
+              name="location"
+              class="block bg-gray-50 appearance-none border rounded-lg md:w-[70%] w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Bangladesh>Dhaka>Gazipur>Rent a Car"
+              disabled
+            />
+            <button
+              type="button"
+              class="md:ml-4 md:mt-0 mt-2 px-4 py-1.5 bg-blue-900 text-white rounded shadow flex"
+              onclick="openModal()"
+            >
+              Choose Location
+            </button>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-4">
+          <label
+            for="description"
+            class="block text-md font-medium text-blue-900 mb-2"
+            >Description</label
+          >
+          <!-- Container for Quill Editor -->
+          <div
+            id="editor-container"
+            class="bg-gray-50 border rounded-lg w-full px-3 py-2 text-blue-900"
+          ></div>
+        </div>
+
+        <!-- Image Upload -->
+        <div>
+          <label
+            for="image"
+            class="block text-md font-medium text-blue-900 mb-2"
+            >Image</label
+          >
+
+          <div
+            id="uploadBox"
+            class="border-2 border-dashed border-gray-300 rounded-lg bg-white p-6 text-center text-gray-600 cursor-pointer hover:border-blue-400 hover:bg-blue-50"
+          >
+            <p>Click or Drag & Drop Images Here</p>
+          </div>
+
+          <input
+            id="fileInput"
+            type="file"
+            multiple
+            accept="image/*"
+            class="hidden"
+          />
+
+          <div id="preview" class="flex flex-wrap gap-4 my-3"></div>
+        </div>
+
+        <div class="mb-4">
+          <label
+            for="price"
+            class="block text-md font-medium text-blue-900 mb-2"
+            >Feature Post</label
+          >
+          <input
+            type="text"
+            id="price"
+            name="price"
+            class="block bg-gray-50 appearance-none border rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Enter feature post"
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            for="phone"
+            class="block text-md font-medium text-blue-900 mb-2"
+            >Phone No</label
+          >
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            class="block bg-gray-50 appearance-none border rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Enter phone no"
+          />
+        </div>
+
+        <!-- Modal for Location Selection -->
+        <div
+          id="location-modal"
+          class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center"
+        >
+          <div class="bg-white md:w-[500px] w-72 p-6 rounded shadow-md">
+            <h2 class="text-2xl font-bold mb-4 text-blue-900">
+              Select Location
+            </h2>
+
+            <!-- FAQ Style Collapse for Country Selection -->
+            <div class="mb-4">
+              <button
+                class="w-full text-left bg-blue-900 text-white px-4 py-2 rounded"
+                onclick="toggleCollapse('country-collapse')"
+              >
+                Country <span class="float-right text-white">▼</span>
+              </button>
+              <div id="country-collapse" class="mt-2 hidden">
+                <!-- Country 1 -->
+                <div class="mb-2">
+                  <button
+                    class="w-full text-left bg-blue-900 px-4 py-2 rounded text-white"
+                    onclick="toggleCollapse('state-collapse-bd')"
+                  >
+                    Bangladesh <span class="float-right text-white">▼</span>
+                  </button>
+                  <div id="state-collapse-bd" class="mt-2 hidden">
+                    <div class="pl-4">
+                      <!-- State 1 -->
+                      <button
+                        class="w-full text-left bg-blue-900 px-4 py-2 rounded text-white"
+                        onclick="toggleCollapse('category-collapse-dhaka')"
+                      >
+                        Dhaka <span class="float-right text-white">▼</span>
+                      </button>
+                      <div id="category-collapse-dhaka" class="mt-2 hidden">
+                        <div class="pl-4">
+                          <label class="block">
+                            <input
+                              type="radio"
+                              name="location"
+                              value="Bangladesh>Dhaka>Rent a Car"
+                              class="mr-2"
+                            />
+                            Rent a Car
+                          </label>
+                          <label class="block mt-1.5">
+                            <input
+                              type="radio"
+                              name="location"
+                              value="Bangladesh>Dhaka>Real Estate"
+                              class="mr-2"
+                            />
+                            Real Estate
+                          </label>
+                        </div>
+                      </div>
+
+                      <!-- State 2 -->
+                      <button
+                        class="w-full text-left bg-blue-900 px-4 py-2 rounded text-white mt-1"
+                        onclick="toggleCollapse('category-collapse-sylhet')"
+                      >
+                        Sylhet <span class="float-right text-white">▼</span>
+                      </button>
+                      <div id="category-collapse-sylhet" class="mt-2 hidden">
+                        <div class="pl-4">
+                          <label class="block">
+                            <input
+                              type="radio"
+                              name="location"
+                              value="Bangladesh>Sylhet>Jobs"
+                              class="mr-2"
+                            />
+                            Jobs
+                          </label>
+                          <label class="block mt-1.5">
+                            <input
+                              type="radio"
+                              name="location"
+                              value="Bangladesh>Sylhet>Tourism"
+                              class="mr-2"
+                            />
+                            Tourism
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Country 2 -->
+                <div class="mb-2">
+                  <button
+                    class="w-full text-left bg-blue-900 px-4 py-2 rounded text-white"
+                    onclick="toggleCollapse('state-collapse-india')"
+                  >
+                    India <span class="float-right text-white">▼</span>
+                  </button>
+                  <div id="state-collapse-india" class="mt-2 hidden">
+                    <div class="pl-4">
+                      <button
+                        class="w-full text-left bg-blue-900 px-4 py-2 rounded text-white"
+                        onclick="toggleCollapse('category-collapse-mumbai')"
+                      >
+                        Mumbai <span class="float-right text-white">▼</span>
+                      </button>
+                      <div id="category-collapse-mumbai" class="mt-2 hidden">
+                        <div class="pl-4">
+                          <label class="block">
+                            <input
+                              type="radio"
+                              name="location"
+                              value="India>Mumbai>IT"
+                              class="mr-2"
+                            />
+                            IT
+                          </label>
+                          <label class="block mt-1">
+                            <input
+                              type="radio"
+                              name="location"
+                              value="India>Mumbai>Healthcare"
+                              class="mr-2"
+                            />
+                            Healthcare
+                          </label>
+                        </div>
+                      </div>
+
+                      <button
+                        class="w-full text-left bg-blue-900 px-4 py-2 rounded text-white mt-1"
+                        onclick="toggleCollapse('category-collapse-delhi')"
+                      >
+                        Delhi <span class="float-right text-white">▼</span>
+                      </button>
+                      <div id="category-collapse-delhi" class="mt-2 hidden">
+                        <div class="pl-4">
+                          <label class="block">
+                            <input
+                              type="radio"
+                              name="location"
+                              value="India>Delhi>Education"
+                              class="mr-2"
+                            />
+                            Education
+                          </label>
+                          <label class="block mt-1">
+                            <input
+                              type="radio"
+                              name="location"
+                              value="India>Delhi>Fashion"
+                              class="mr-2"
+                            />
+                            Fashion
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Save Location Button -->
+            <div class="text-right">
+              <button
+                type="button"
+                class="px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 focus:ring-4 focus:ring-blue-300"
+                onclick="saveLocation()"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                class="ml-2 px-4 py-2 bg-gray-300 text-gray-700 rounded shadow hover:bg-gray-400 focus:ring-4 focus:ring-gray-200"
+                onclick="closeModal()"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-blue-900 text-white p-2 rounded-lg"
+        >
+          Post
+        </button>
+      </div>
+    </div>
+
+    <footer class="bg-blue-900 text-gray-300 p-6 mt-10">
+      <div class="max-w-screen-lg mx-auto grid gap-6 md:grid-cols-4">
+        <!-- About Section -->
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">About Brand</h3>
+          <p class="text-sm">
+            Brand Name is your go-to platform for classified listings. From
+            local events to personal ads, discover everything in one place.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="post.html" class="hover:underline">Contact Us</a></li>
+            <li>
+              <a href="post.html" class="hover:underline">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="post.html" class="hover:underline">Terms of Service</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Signup -->
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">Get in touch</h3>
+          <p class="text-sm mb-4">Example@gmail.com</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">Back Now</h3>
+          <ul class="space-y-2">
+            <li><a href="post.html" class="hover:underline">Back Me</a></li>
+            <li><a href="post.html" class="hover:underline">No Back</a></li>
+            <li><a href="post.html" class="hover:underline">Demo Now</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Social Media and Copyright -->
+      <div
+        class="mt-6 border-t border-white pt-4 text-sm flex flex-col md:flex-row justify-between items-center max-w-screen-lg mx-auto"
+      >
+        <p>&copy; 2024 Brand Name. All rights reserved.</p>
+        <div class="flex space-x-4 mt-3 md:mt-0">
+          <img
+            src="/image/fb.png"
+            class="h-8 w-8 text-white bg-white rounded-lg"
+          />
+          <img
+            src="/image//ins.png"
+            class="h-8 w-8 text-white bg-white rounded-lg"
+          />
+          <img
+            src="/image//twit.png"
+            class="h-8 w-8 text-white bg-white rounded-lg"
+          />
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleDropdown() {
+        const dropdown = document.getElementById("dropdownMenu");
+        dropdown.classList.toggle("opacity-0");
+        dropdown.classList.toggle("invisible");
+      }
+      // Close the dropdown when clicking outside of it
+      document.addEventListener("click", function (event) {
+        const dropdown = document.getElementById("dropdownMenu");
+        const button = document.getElementById("dropdownButton");
+        if (
+          !dropdown.contains(event.target) &&
+          !button.contains(event.target)
+        ) {
+          dropdown.classList.add("opacity-0", "invisible");
+        }
+      });
+
+      let quill = new Quill("#editor-container", {
+        theme: "snow",
+        placeholder: "Enter description",
+        modules: {
+          toolbar: [
+            ["bold", "italic", "underline", "strike"],
+            ["blockquote", "code-block"],
+            [{ list: "ordered" }, { list: "bullet" }],
+            [{ header: [1, 2, 3, false] }],
+            [{ color: [] }, { background: [] }],
+            ["link", "image"],
+          ],
+        },
+      });
+      document.querySelector("#editor-container .ql-editor").style.height =
+        "100px";
+
+      const uploadBox = document.getElementById("uploadBox");
+      const fileInput = document.getElementById("fileInput");
+      const preview = document.getElementById("preview");
+
+      uploadBox.addEventListener("click", () => fileInput.click());
+      uploadBox.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        uploadBox.classList.add("border-blue-400", "bg-blue-50");
+      });
+      uploadBox.addEventListener("dragleave", () =>
+        uploadBox.classList.remove("border-blue-400", "bg-blue-50")
+      );
+      uploadBox.addEventListener("drop", (e) => {
+        e.preventDefault();
+        uploadBox.classList.remove("border-blue-400", "bg-blue-50");
+        handleFiles(e.dataTransfer.files);
+      });
+      fileInput.addEventListener("change", () => handleFiles(fileInput.files));
+
+      function handleFiles(files) {
+        Array.from(files).forEach((file) => {
+          if (file.type.startsWith("image/")) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              const img = document.createElement("img");
+              img.src = e.target.result;
+              img.alt = "Uploaded Image";
+              img.className = "w-24 h-24 object-cover rounded-md shadow-md";
+              preview.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+      }
+
+      function openModal() {
+        document.getElementById("location-modal").classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("location-modal").classList.add("hidden");
+      }
+
+      function toggleCollapse(id) {
+        const element = document.getElementById(id);
+        element.classList.toggle("hidden");
+      }
+
+      function saveLocation() {
+        const location =
+          document.querySelector('input[name="location"]:checked')?.value || "";
+        document.getElementById("location").value = location;
+        closeModal();
+      }
+    </script>
+  </body>
+</html>

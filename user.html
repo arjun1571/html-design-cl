@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User List</title>
+    <link href="./dist/styles.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <nav class="bg-blue-900 border-b border-gray-300">
+      <div
+        class="max-w-screen-lg mx-auto flex justify-between items-center py-4 md:px-0 px-4"
+      >
+        <a href="my-accout.html" class="text-xl font-semibold text-white"
+          >Brand Name</a
+        >
+        <div class="flex items-center">
+          <div class="me-8">
+            <button>
+              <a
+                href="create-post.html"
+                class="block px-4 py-0.5 font-semibold rounded-lg text-blue-900 text-lg bg-white"
+                >Add Post</a
+              >
+            </button>
+          </div>
+          <div class="relative">
+            <button
+              id="dropdownButton"
+              class="flex items-center focus:outline-none bg-white rounded-lg"
+              onclick="toggleDropdown()"
+            >
+              <img
+                src="/image/profile.png"
+                alt="Profile Icon"
+                class="w-10 h-10 rounded-full"
+              />
+            </button>
+            <ul
+              id="dropdownMenu"
+              class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg opacity-0 invisible transition-opacity duration-200"
+            >
+              <li>
+                <a
+                  href="my-accout.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >My Account</a
+                >
+              </li>
+              <li>
+                <a
+                  href="buy-cradit.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Buy Credit</a
+                >
+              </li>
+              <li>
+                <a
+                  href="update-profile.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Update Profile</a
+                >
+              </li>
+              <li>
+                <a
+                  href="create-post.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Add Post</a
+                >
+              </li>
+              <li>
+                <a
+                  href="user.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Users</a
+                >
+              </li>
+              <li>
+                <a
+                  href="transaction.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Transaction</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact-us.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="privacy-policy.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="login.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Logout</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="max-w-screen-lg mx-auto md:p-6 p-4 min-h-[80vh]">
+      <div class="flex flex-wrap justify-between items-center mb-4">
+        <h2 class="text-2xl text-blue-900 font-semibold">User List</h2>
+        <input
+          type="text"
+          placeholder="Search user..."
+          class="px-4 py-2 border border-gray-300 rounded-lg md:w-72 w-full"
+        />
+      </div>
+
+      <div class="overflow-x-auto border shadow-lg rounded-lg">
+        <table class="min-w-full bg-gray-100 table-auto text-left">
+          <thead>
+            <tr class="text-blue-900 font-semibold text-xl bg-gray-200">
+              <th class="px-4 py-4 min-w-40">ID</th>
+              <th class="px-4 py-4 in-w-28">User Name</th>
+              <th class="px-4 py-4 min-w-32">Date</th>
+              <th class="px-4 py-4 min-w-32">Amount</th>
+              <th class="px-4 py-4 min-w-60">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Example User 1 -->
+            <tr class="hover:bg-gray-100">
+              <td class="px-4 py-4">John Doe</td>
+              <td class="px-4 py-4">johndoe@example.com</td>
+              <td class="px-4 py-4">$500</td>
+              <td class="px-4 py-4">$500</td>
+              <td class="px-4 py-4">(123) 456-7890</td>
+            </tr>
+
+            <!-- Example User 2 -->
+            <tr class="hover:bg-gray-100">
+              <td class="px-4 py-4">Jane Smith</td>
+              <td class="px-4 py-4">janesmith@example.com</td>
+              <td class="px-4 py-4">$750</td>
+              <td class="px-4 py-4">$750</td>
+              <td class="px-4 py-4">(987) 654-3210</td>
+            </tr>
+
+            <!-- Example User 3 -->
+            <tr class="hover:bg-gray-100">
+              <td class="px-4 py-4">Emily Johnson</td>
+              <td class="px-4 py-4">emilyj@example.com</td>
+              <td class="px-4 py-4">$1200</td>
+              <td class="px-4 py-4">(555) 123-4567</td>
+              <td class="px-4 py-4">(555) 123-4567</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <footer class="bg-blue-900 text-gray-300 p-6 mt-10">
+      <div class="max-w-screen-lg mx-auto grid gap-6 md:grid-cols-4">
+        <!-- About Section -->
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">About Brand</h3>
+          <p class="text-sm">
+            Brand Name is your go-to platform for classified listings. From
+            local events to personal ads, discover everything in one place.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="post.html" class="hover:underline">Contact Us</a></li>
+            <li>
+              <a href="post.html" class="hover:underline">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="post.html" class="hover:underline">Terms of Service</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Signup -->
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">Get in touch</h3>
+          <p class="text-sm mb-4">Example@gmail.com</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">Back Now</h3>
+          <ul class="space-y-2">
+            <li><a href="post.html" class="hover:underline">Back Me</a></li>
+            <li><a href="post.html" class="hover:underline">No Back</a></li>
+            <li><a href="post.html" class="hover:underline">Demo Now</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Social Media and Copyright -->
+      <div
+        class="mt-6 border-t border-white pt-4 text-sm flex flex-col md:flex-row justify-between items-center max-w-screen-lg mx-auto"
+      >
+        <p>&copy; 2024 Brand Name. All rights reserved.</p>
+        <div class="flex space-x-4 mt-3 md:mt-0">
+          <img
+            src="/image/fb.png"
+            class="h-8 w-8 text-white bg-white rounded-lg"
+          />
+          <img
+            src="/image//ins.png"
+            class="h-8 w-8 text-white bg-white rounded-lg"
+          />
+          <img
+            src="/image//twit.png"
+            class="h-8 w-8 text-white bg-white rounded-lg"
+          />
+        </div>
+      </div>
+    </footer>
+    <script>
+      function toggleDropdown() {
+        const dropdown = document.getElementById("dropdownMenu");
+        dropdown.classList.toggle("opacity-0");
+        dropdown.classList.toggle("invisible");
+      }
+      // Close the dropdown when clicking outside of it
+      document.addEventListener("click", function (event) {
+        const dropdown = document.getElementById("dropdownMenu");
+        const button = document.getElementById("dropdownButton");
+        if (
+          !dropdown.contains(event.target) &&
+          !button.contains(event.target)
+        ) {
+          dropdown.classList.add("opacity-0", "invisible");
+        }
+      });
+    </script>
+  </body>
+</html>
