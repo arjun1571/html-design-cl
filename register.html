@@ -1,243 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register Page</title>
-    <link href="./dist/styles.css" rel="stylesheet" />
-  </head>
-  <body class="bg-gray-100 font-[Poppins]">
-    <nav class="bg-blue-900 border-b border-gray-300 md:mb-10 mb-5">
-      <div
-        class="max-w-screen-lg mx-auto flex justify-between items-center py-4 md:px-0 px-4"
-      >
-        <a href="my-accout.html" class="text-xl font-semibold text-white"
-          >Brand Name</a
-        >
-        <div class="relative group">
-          <a
-            href="login.html"
-            class="text-blue-900 font-semibold bg-gray-100 px-4 py-1.5 rounded-lg"
-            >Login</a
-          >
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register Page</title>
+  <link href="./dist/styles.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-100 font-[Poppins]">
+  <nav class="bg-blue-900 border-b border-gray-300 md:mb-10 mb-5">
+    <div class="max-w-screen-lg mx-auto flex justify-between items-center py-4 md:px-0 px-4">
+      <a href="my-accout.html" class="text-xl font-semibold text-white">Brand Name</a>
+      <div class="relative group">
+        <a href="login.html" class="text-blue-900 font-semibold bg-gray-100 px-4 py-1.5 rounded-lg">Login</a>
       </div>
-    </nav>
-    <div class="md:px-0 px-4">
-      <form
-        class="bg-blue-100 shadow-md rounded-lg md:px-8 px-6 pt-6 pb-8 mb-4 max-w-md mx-auto"
-      >
-        <h1
-          class="text-3xl text-start font-bold text-blue-900 mb-6 font-[Poppins]"
-        >
-          Register
-        </h1>
-        <div class="mb-4 md:w-96 w-72">
-          <label for="name" class="block text-blue-900 text-md font-bold mb-2"
-            >Name:</label
-          >
-          <input
-            placeholder="Enter your name"
-            type="text"
-            id="name"
-            class="shadow appearance-none bg-gray-50 border rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-        <div class="mb-4 md:w-96 w-72">
-          <label for="email" class="block text-blue-900 text-md font-bold mb-2"
-            >Email:</label
-          >
-          <input
-            placeholder="Enter your email"
-            type="email"
-            id="email"
-            class="shadow appearance-none border bg-gray-50 rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-        <div class="relative mb-4 md:w-96 w-72">
-          <label
-            for="password"
-            class="block text-blue-900 text-md font-bold mb-2"
-            >Password:</label
-          >
-          <input
-            placeholder="Enter your password"
-            type="password"
-            id="password"
-            class="shadow appearance-none border bg-gray-50 rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
-          />
-          <button
-            type="button"
-            id="togglePassword"
-            class="absolute top-8 inset-y-0 right-0 px-3 flex items-center text-blue-900"
-          >
-            <svg
-              id="passwordIcon"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="h-5 w-5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.522 5 12 5c4.477 0 8.268 2.943 9.542 7-.35 1.213-1.308 2.841-3.084 4.317C16.424 18.568 14.282 19 12 19c-4.477 0-8.268-2.943-9.542-7z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="relative mb-4 md:w-96 w-72">
-          <label
-            for="confirmPassword"
-            class="block text-blue-900 text-md font-bold mb-2"
-            >Confirm Password:</label
-          >
-          <input
-            placeholder="Confirm your password"
-            type="password"
-            id="confirmPassword"
-            class="shadow appearance-none border rounded-lg bg-gray-50 w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
-          />
-          <button
-            type="button"
-            id="toggleConfirmPassword"
-            class="absolute top-8 inset-y-0 right-0 px-3 flex items-center text-blue-900"
-          >
-            <svg
-              id="confirmPasswordIcon"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="h-5 w-5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.522 5 12 5c4.477 0 8.268 2.943 9.542 7-.35 1.213-1.308 2.841-3.084 4.317C16.424 18.568 14.282 19 12 19c-4.477 0-8.268-2.943-9.542-7z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="flex items-center justify-between mt-6">
-          <button
-            type="submit"
-            class="bg-blue-900 text-white px-4 py-2 rounded w-full"
-          >
-            Register
-          </button>
-        </div>
-        <div class="flex justify-center mt-5">
-          <a
-            href="login.html"
-            class="text-blue-900 text-center text-md font-normal"
-            >Already have an account? Login now</a
-          >
-        </div>
-      </form>
     </div>
-    <footer class="bg-blue-900 text-gray-300 p-6 mt-10">
-      <div class="max-w-screen-lg mx-auto grid gap-6 md:grid-cols-4">
-        <!-- About Section -->
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-3">About Brand</h3>
-          <p class="text-sm">
-            Brand Name is your go-to platform for classified listings. From
-            local events to personal ads, discover everything in one place.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-3">Quick Links</h3>
-          <ul class="space-y-2">
-            <li><a href="post.html" class="hover:underline">Contact Us</a></li>
-            <li>
-              <a href="post.html" class="hover:underline">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="post.html" class="hover:underline">Terms of Service</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Newsletter Signup -->
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-3">Get in touch</h3>
-          <p class="text-sm mb-4">Example@gmail.com</p>
-        </div>
-
-        <!-- Quick Links -->
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-3">Back Now</h3>
-          <ul class="space-y-2">
-            <li><a href="post.html" class="hover:underline">Back Me</a></li>
-            <li><a href="post.html" class="hover:underline">No Back</a></li>
-            <li><a href="post.html" class="hover:underline">Demo Now</a></li>
-          </ul>
-        </div>
+  </nav>
+  <div class="md:px-0 px-4 flex items-center justify-center">
+    <form class="bg-blue-100 shadow-md rounded-lg md:px-8 px-6 pt-6 pb-8 mb-4 max-w-md mx-auto">
+      <h1 class="text-3xl text-start font-bold text-blue-900 mb-6 font-[Poppins]">
+        Register
+      </h1>
+      <div class="mb-4 md:w-96 w-72">
+        <label for="name" class="block text-blue-900 text-md font-bold mb-2">Name:</label>
+        <input placeholder="Enter your name" type="text" id="name"
+          class="shadow appearance-none bg-gray-50 border rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline" />
+      </div>
+      <div class="mb-4 md:w-96 w-72">
+        <label for="email" class="block text-blue-900 text-md font-bold mb-2">Email:</label>
+        <input placeholder="Enter your email" type="email" id="email"
+          class="shadow appearance-none border bg-gray-50 rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline" />
+      </div>
+      <div class="relative mb-4 md:w-96 w-72">
+        <label for="password" class="block text-blue-900 text-md font-bold mb-2">Password:</label>
+        <input placeholder="Enter your password" type="password" id="password"
+          class="shadow appearance-none border bg-gray-50 rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline" />
+        <button type="button" id="togglePassword"
+          class="absolute top-8 inset-y-0 right-0 px-3 flex items-center text-blue-900">
+          <svg id="passwordIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" class="h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M2.458 12C3.732 7.943 7.522 5 12 5c4.477 0 8.268 2.943 9.542 7-.35 1.213-1.308 2.841-3.084 4.317C16.424 18.568 14.282 19 12 19c-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+        </button>
+      </div>
+      <div class="relative mb-4 md:w-96 w-72">
+        <label for="confirmPassword" class="block text-blue-900 text-md font-bold mb-2">Confirm Password:</label>
+        <input placeholder="Confirm your password" type="password" id="confirmPassword"
+          class="shadow appearance-none border rounded-lg bg-gray-50 w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline" />
+        <button type="button" id="toggleConfirmPassword"
+          class="absolute top-8 inset-y-0 right-0 px-3 flex items-center text-blue-900">
+          <svg id="confirmPasswordIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" class="h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M2.458 12C3.732 7.943 7.522 5 12 5c4.477 0 8.268 2.943 9.542 7-.35 1.213-1.308 2.841-3.084 4.317C16.424 18.568 14.282 19 12 19c-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex items-center justify-between mt-6">
+        <button type="submit" class="bg-blue-900 text-white px-4 py-2 rounded w-full">
+          Register
+        </button>
+      </div>
+      <div class="flex justify-center mt-5">
+        <a href="login.html" class="text-blue-900 text-center text-md font-normal">Already have an account? Login
+          now</a>
+      </div>
+    </form>
+  </div>
+  <footer class="bg-blue-900 text-gray-300 p-6 mt-10">
+    <div class="max-w-screen-lg mx-auto grid gap-6 md:grid-cols-4">
+      <!-- About Section -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-3">About Brand</h3>
+        <p class="text-sm">
+          Brand Name is your go-to platform for classified listings. From
+          local events to personal ads, discover everything in one place.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-3">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="post.html" class="hover:underline">Contact Us</a></li>
+          <li>
+            <a href="post.html" class="hover:underline">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="post.html" class="hover:underline">Terms of Service</a>
+          </li>
+        </ul>
       </div>
 
-      <!-- Social Media and Copyright -->
-      <div
-        class="mt-6 border-t border-white pt-4 text-sm flex flex-col md:flex-row justify-between items-center max-w-screen-lg mx-auto"
-      >
-        <p>&copy; 2024 Brand Name. All rights reserved.</p>
-        <div class="flex space-x-4 mt-3 md:mt-0">
-          <img
-            src="/image/fb.png"
-            class="h-8 w-8 text-white bg-white rounded-lg"
-          />
-          <img
-            src="/image//ins.png"
-            class="h-8 w-8 text-white bg-white rounded-lg"
-          />
-          <img
-            src="/image//twit.png"
-            class="h-8 w-8 text-white bg-white rounded-lg"
-          />
-        </div>
+
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-3">Back Now</h3>
+        <ul class="space-y-2">
+          <li><a href="post.html" class="hover:underline">Back Me</a></li>
+          <li><a href="post.html" class="hover:underline">No Back</a></li>
+          <li><a href="post.html" class="hover:underline">Demo Now</a></li>
+        </ul>
       </div>
-    </footer>
+      <!-- Newsletter Signup -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-3">Get in touch</h3>
+        <p class="text-sm mb-4">Example@gmail.com</p>
+      </div>
+    </div>
 
-    <script>
-      // Toggle Password Visibility
-      const togglePassword = document.querySelector("#togglePassword");
-      const passwordInput = document.querySelector("#password");
+    <!-- Social Media and Copyright -->
+    <div
+      class="mt-6 border-t border-white pt-4 text-sm flex flex-col md:flex-row justify-between items-center max-w-screen-lg mx-auto">
+      <p>&copy; 2024 Brand Name. All rights reserved.</p>
+      <div class="flex space-x-4 mt-3 md:mt-0">
+        <img src="/image/fb.png" class="h-8 w-8 text-white bg-white rounded-lg" />
+        <img src="/image//ins.png" class="h-8 w-8 text-white bg-white rounded-lg" />
+        <img src="/image//twit.png" class="h-8 w-8 text-white bg-white rounded-lg" />
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Toggle Password Visibility
+    const togglePassword = document.querySelector("#togglePassword");
+    const passwordInput = document.querySelector("#password");
 
-      const toggleConfirmPassword = document.querySelector(
-        "#toggleConfirmPassword"
-      );
-      const confirmPasswordInput = document.querySelector("#confirmPassword");
+    const toggleConfirmPassword = document.querySelector(
+      "#toggleConfirmPassword"
+    );
+    const confirmPasswordInput = document.querySelector("#confirmPassword");
 
-      togglePassword.addEventListener("click", () => {
-        const type =
-          passwordInput.getAttribute("type") === "password"
-            ? "text"
-            : "password";
-        passwordInput.setAttribute("type", type);
-      });
+    togglePassword.addEventListener("click", () => {
+      const type =
+        passwordInput.getAttribute("type") === "password"
+          ? "text"
+          : "password";
+      passwordInput.setAttribute("type", type);
+    });
 
-      toggleConfirmPassword.addEventListener("click", () => {
-        const type =
-          confirmPasswordInput.getAttribute("type") === "password"
-            ? "text"
-            : "password";
-        confirmPasswordInput.setAttribute("type", type);
-      });
-    </script>
-  </body>
+    toggleConfirmPassword.addEventListener("click", () => {
+      const type =
+        confirmPasswordInput.getAttribute("type") === "password"
+          ? "text"
+          : "password";
+      confirmPasswordInput.setAttribute("type", type);
+    });
+  </script>
+</body>
+
 </html>

@@ -1,202 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Page</title>
-    <link href="./dist/styles.css" rel="stylesheet" />
-  </head>
-  <body class="bg-gray-100 font-[Poppins]">
-    <nav class="bg-blue-900 border-b border-gray-300 md:mb-10 mb-5">
-      <div
-        class="max-w-screen-lg mx-auto flex justify-between items-center py-4 md:px-0 px-4"
-      >
-        <a href="my-accout.html" class="text-xl font-semibold text-white"
-          >Brand Name</a
-        >
-        <div class="relative group">
-          <a
-            href="register.html"
-            class="text-blue-900 font-semibold bg-gray-100 px-4 py-1.5 rounded-lg"
-            >Register</a
-          >
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <link href="./dist/styles.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-100 font-[Poppins]">
+  <nav class="bg-blue-900 border-b border-gray-300 md:mb-10 mb-5">
+    <div class="max-w-screen-lg mx-auto flex justify-between items-center py-4 md:px-0 px-4">
+      <a href="my-accout.html" class="text-xl font-semibold text-white">Brand Name</a>
+      <div class="relative group">
+        <a href="register.html" class="text-blue-900 font-semibold bg-gray-100 px-4 py-1.5 rounded-lg">Register</a>
+      </div>
+    </div>
+  </nav>
+  <div class="md:px-0 px-4 min-h-[60vh] flex items-center justify-center">
+    <form class="bg-blue-100 shadow-md rounded-lg md:px-8 px-6 pt-6 pb-8 mb-4 max-w-md mx-auto">
+      <h1 class="text-3xl text-start font-bold text-blue-900 mb-6 font-[Poppins]">
+        Login
+      </h1>
+      <div class="mb-4 md:w-96 w-72">
+        <label for="email" class="block text-blue-900 text-md font-bold mb-2">Email:</label>
+        <input placeholder="Enter your email" type="email" id="email"
+          class="shadow bg-gray-50 appearance-none border rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline" />
+      </div>
+      <div class="relative">
+        <label for="password" class="block text-blue-900 text-md font-bold mb-2">Password:</label>
+        <input placeholder="Enter your password" type="password" id="password"
+          class="shadow bg-gray-50 appearance-none border rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline" />
+        <button type="button" id="togglePassword"
+          class="absolute top-8 inset-y-0 right-0 px-3 flex items-center text-blue-900">
+          <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            class="h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M2.458 12C3.732 7.943 7.522 5 12 5c4.477 0 8.268 2.943 9.542 7-.35 1.213-1.308 2.841-3.084 4.317C16.424 18.568 14.282 19 12 19c-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex items-center justify-between mt-4">
+        <div class="flex items-center">
+          <input type="checkbox" id="checkbox" class="h-4 w-4 bg-gray-50 cursor-pointer" />
+          <label for="checkbox" class="block text-blue-900 text-sm font-semibold ml-2">Remember me</label>
+        </div>
+        <div>
+          <h6 class="text-sm text-blue-900 cursor-pointer">
+            Forgot your password?
+          </h6>
         </div>
       </div>
-    </nav>
-    <div class="md:px-0 px-4 min-h-[60vh]">
-      <form
-        class="bg-blue-100 shadow-md rounded-lg md:px-8 px-6 pt-6 pb-8 mb-4 max-w-md mx-auto"
-      >
-        <h1
-          class="text-3xl text-start font-bold text-blue-900 mb-6 font-[Poppins]"
-        >
-          Login
-        </h1>
-        <div class="mb-4 md:w-96 w-72">
-          <label for="email" class="block text-blue-900 text-md font-bold mb-2"
-            >Email:</label
-          >
-          <input
-            placeholder="Enter your email"
-            type="email"
-            id="email"
-            class="shadow bg-gray-50 appearance-none border rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-        <div class="relative">
-          <label
-            for="password"
-            class="block text-blue-900 text-md font-bold mb-2"
-            >Password:</label
-          >
-          <input
-            placeholder="Enter your password"
-            type="password"
-            id="password"
-            class="shadow bg-gray-50 appearance-none border rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
-          />
-          <button
-            type="button"
-            id="togglePassword"
-            class="absolute top-8 inset-y-0 right-0 px-3 flex items-center text-blue-900"
-          >
-            <svg
-              id="eyeIcon"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="h-5 w-5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.522 5 12 5c4.477 0 8.268 2.943 9.542 7-.35 1.213-1.308 2.841-3.084 4.317C16.424 18.568 14.282 19 12 19c-4.477 0-8.268-2.943-9.542-7z"
-              />
-            </svg>
-          </button>
-        </div>
+      <div class="flex items-center justify-between mt-4">
+        <button type="submit" class="bg-blue-900 text-white px-4 py-2 rounded w-full">
+          <a href="my-accout.html" class="">Login</a>
+        </button>
+      </div>
+      <div class="flex justify-center mt-3">
+        <a href="register.html" class="text-blue-900 text-center text-md font-normal">Don't have an account? register
+          now</a>
+      </div>
+    </form>
+  </div>
+  <footer class="bg-blue-900 text-gray-300 p-6 mt-10">
+    <div class="max-w-screen-lg mx-auto grid gap-6 md:grid-cols-4">
+      <!-- About Section -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-3">About Brand</h3>
+        <p class="text-sm">
+          Brand Name is your go-to platform for classified listings. From
+          local events to personal ads, discover everything in one place.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-3">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="post.html" class="hover:underline">Contact Us</a></li>
+          <li>
+            <a href="post.html" class="hover:underline">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="post.html" class="hover:underline">Terms of Service</a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="flex items-center justify-between mt-4">
-          <div class="flex items-center">
-            <input
-              type="checkbox"
-              id="checkbox"
-              class="h-4 w-4 bg-gray-50 cursor-pointer"
-            />
-            <label
-              for="checkbox"
-              class="block text-blue-900 text-sm font-semibold ml-2"
-              >Remember me</label
-            >
-          </div>
-          <div>
-            <h6 class="text-sm text-blue-900 cursor-pointer">
-              Forgot your password?
-            </h6>
-          </div>
-        </div>
-        <div class="flex items-center justify-between mt-4">
-          <button
-            type="submit"
-            class="bg-blue-900 text-white px-4 py-2 rounded w-full"
-          >
-            <a href="my-accout.html" class="">Login</a>
-          </button>
-        </div>
-        <div class="flex justify-center mt-3">
-          <a
-            href="register.html"
-            class="text-blue-900 text-center text-md font-normal"
-            >Don't have an account? register now</a
-          >
-        </div>
-      </form>
+
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-3">Back Now</h3>
+        <ul class="space-y-2">
+          <li><a href="post.html" class="hover:underline">Back Me</a></li>
+          <li><a href="post.html" class="hover:underline">No Back</a></li>
+          <li><a href="post.html" class="hover:underline">Demo Now</a></li>
+        </ul>
+      </div>
+      <!-- Newsletter Signup -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-3">Get in touch</h3>
+        <p class="text-sm mb-4">Example@gmail.com</p>
+      </div>
     </div>
 
-    <footer class="bg-blue-900 text-gray-300 p-6 mt-10">
-      <div class="max-w-screen-lg mx-auto grid gap-6 md:grid-cols-4">
-        <!-- About Section -->
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-3">About Brand</h3>
-          <p class="text-sm">
-            Brand Name is your go-to platform for classified listings. From
-            local events to personal ads, discover everything in one place.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-3">Quick Links</h3>
-          <ul class="space-y-2">
-            <li><a href="post.html" class="hover:underline">Contact Us</a></li>
-            <li>
-              <a href="post.html" class="hover:underline">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="post.html" class="hover:underline">Terms of Service</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Newsletter Signup -->
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-3">Get in touch</h3>
-          <p class="text-sm mb-4">Example@gmail.com</p>
-        </div>
-
-        <!-- Quick Links -->
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-3">Back Now</h3>
-          <ul class="space-y-2">
-            <li><a href="post.html" class="hover:underline">Back Me</a></li>
-            <li><a href="post.html" class="hover:underline">No Back</a></li>
-            <li><a href="post.html" class="hover:underline">Demo Now</a></li>
-          </ul>
-        </div>
+    <!-- Social Media and Copyright -->
+    <div
+      class="mt-6 border-t border-white pt-4 text-sm flex flex-col md:flex-row justify-between items-center max-w-screen-lg mx-auto">
+      <p>&copy; 2024 Brand Name. All rights reserved.</p>
+      <div class="flex space-x-4 mt-3 md:mt-0">
+        <img src="/image/fb.png" class="h-8 w-8 text-white bg-white rounded-lg" />
+        <img src="/image//ins.png" class="h-8 w-8 text-white bg-white rounded-lg" />
+        <img src="/image//twit.png" class="h-8 w-8 text-white bg-white rounded-lg" />
       </div>
+    </div>
+  </footer>
+  <script>
+    const togglePassword = document.querySelector("#togglePassword");
+    const passwordInput = document.querySelector("#password");
 
-      <!-- Social Media and Copyright -->
-      <div
-        class="mt-6 border-t border-white pt-4 text-sm flex flex-col md:flex-row justify-between items-center max-w-screen-lg mx-auto"
-      >
-        <p>&copy; 2024 Brand Name. All rights reserved.</p>
-        <div class="flex space-x-4 mt-3 md:mt-0">
-          <img
-            src="/image/fb.png"
-            class="h-8 w-8 text-white bg-white rounded-lg"
-          />
-          <img
-            src="/image//ins.png"
-            class="h-8 w-8 text-white bg-white rounded-lg"
-          />
-          <img
-            src="/image//twit.png"
-            class="h-8 w-8 text-white bg-white rounded-lg"
-          />
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      const togglePassword = document.querySelector("#togglePassword");
-      const passwordInput = document.querySelector("#password");
-
-      togglePassword.addEventListener("click", () => {
-        // Toggle the type attribute
-        const type =
-          passwordInput.getAttribute("type") === "password"
-            ? "text"
-            : "password";
-        passwordInput.setAttribute("type", type);
-        const eyeIcon = togglePassword.querySelector("#eyeIcon");
-        if (type === "text") {
-          eyeIcon.innerHTML = `
+    togglePassword.addEventListener("click", () => {
+      // Toggle the type attribute
+      const type =
+        passwordInput.getAttribute("type") === "password"
+          ? "text"
+          : "password";
+      passwordInput.setAttribute("type", type);
+      const eyeIcon = togglePassword.querySelector("#eyeIcon");
+      if (type === "text") {
+        eyeIcon.innerHTML = `
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -204,8 +138,8 @@
               d="M2.458 12C3.732 7.943 7.522 5 12 5c4.477 0 8.268 2.943 9.542 7-.35 1.213-1.308 2.841-3.084 4.317C16.424 18.568 14.282 19 12 19c-4.477 0-8.268-2.943-9.542-7z"
             />
           `;
-        } else {
-          eyeIcon.innerHTML = `
+      } else {
+        eyeIcon.innerHTML = `
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -219,8 +153,9 @@
               d="M2.458 12C3.732 7.943 7.522 5 12 5c4.477 0 8.268 2.943 9.542 7-.35 1.213-1.308 2.841-3.084 4.317C16.424 18.568 14.282 19 12 19c-4.477 0-8.268-2.943-9.542-7z"
             />
           `;
-        }
-      });
-    </script>
-  </body>
+      }
+    });
+  </script>
+</body>
+
 </html>
