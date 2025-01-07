@@ -16,7 +16,7 @@
         <div class="me-8">
           <button>
             <a href="create-post.html"
-              class="block px-4 py-0.5 font-semibold rounded-lg text-blue-900 text-lg bg-white">Add Post</a>
+              class="block px-4 py-0.5 font-semibold rounded-2xl text-blue-900 text-lg bg-white">Add Post</a>
           </button>
         </div>
         <div class="relative">
@@ -73,7 +73,7 @@
             <th class="px-4 py-4 in-w-28">User Name</th>
             <th class="px-4 py-4 min-w-32">Date</th>
             <th class="px-4 py-4 min-w-32">Amount</th>
-            <th class="px-4 py-4 min-w-60">Status</th>
+            <th class="px-4 py-4 min-w-20">Status</th>
           </tr>
         </thead>
         <tbody>
@@ -83,7 +83,14 @@
             <td class="px-4 py-4">johndoe@example.com</td>
             <td class="px-4 py-4">$500</td>
             <td class="px-4 py-4">$500</td>
-            <td class="px-4 py-4">(123) 456-7890</td>
+            <td class="px-4 py-4">
+              <label for="switch3" class="inline-flex relative items-center cursor-pointer">
+                <input type="checkbox" id="switch3" class="sr-only peer" checked>
+                <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-900"></div>
+                <span
+                  class="absolute left-0.5 top-0.5 bg-white w-5 h-5 rounded-full peer-checked:translate-x-full peer-checked:bg-gray-200 transition"></span>
+              </label>
+            </td>
           </tr>
 
           <!-- Example User 2 -->
@@ -92,7 +99,14 @@
             <td class="px-4 py-4">janesmith@example.com</td>
             <td class="px-4 py-4">$750</td>
             <td class="px-4 py-4">$750</td>
-            <td class="px-4 py-4">(987) 654-3210</td>
+            <td class="px-4 py-4">
+              <label for="switch3" class="inline-flex relative items-center cursor-pointer">
+                <input type="checkbox" id="switch3" class="sr-only peer" checked>
+                <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-900"></div>
+                <span
+                  class="absolute left-0.5 top-0.5 bg-white w-5 h-5 rounded-full peer-checked:translate-x-full peer-checked:bg-gray-200 transition"></span>
+              </label>
+            </td>
           </tr>
 
           <!-- Example User 3 -->
@@ -101,7 +115,14 @@
             <td class="px-4 py-4">emilyj@example.com</td>
             <td class="px-4 py-4">$1200</td>
             <td class="px-4 py-4">(555) 123-4567</td>
-            <td class="px-4 py-4">(555) 123-4567</td>
+            <td class="px-4 py-4">
+              <label for="switch3" class="inline-flex relative items-center cursor-pointer">
+                <input type="checkbox" id="switch3" class="sr-only peer" checked>
+                <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-900"></div>
+                <span
+                  class="absolute left-0.5 top-0.5 bg-white w-5 h-5 rounded-full peer-checked:translate-x-full peer-checked:bg-gray-200 transition"></span>
+              </label>
+            </td>
           </tr>
         </tbody>
       </table>
