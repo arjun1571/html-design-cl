@@ -88,7 +88,7 @@
       <div class="mb-4">
         <label for="description" class="block text-md font-medium text-blue-900 mb-2">Description</label>
         <!-- Container for Quill Editor -->
-        <div id="editor-container" class="bg-gray-50 border rounded-lg w-full px-3 py-2 text-blue-900"></div>
+        <div id="editor-container" class="bg-gray-50 border rounded-b-lg w-full px-3 py-2 text-blue-900"></div>
       </div>
 
       <!-- Image Upload -->
@@ -104,12 +104,33 @@
 
         <div id="preview" class="flex flex-wrap gap-4 my-3"></div>
       </div>
+      <div class="mb-4">
+        <label for="post-title" class="block text-md font-medium text-blue-900 mb-2">Feature Post</label>
+        <div class="flex flex-wrap gap-5 mt-2">
+          <div class="bg-blue-900 rounded-md px-4 py-1 text-white ">
+            <label class="cursor-pointer"><input type="checkbox" onclick="limitCheckboxSelection(this)"> Option
+              1</label>
+          </div>
+          <div class="bg-blue-900 rounded-md px-4 py-1 text-white">
+            <label class="cursor-pointer"><input type="checkbox" onclick="limitCheckboxSelection(this)"> Option
+              1</label>
+          </div>
+          <div class="bg-blue-900 rounded-md px-4 py-1 text-white">
+            <label class="cursor-pointer"><input type="checkbox" onclick="limitCheckboxSelection(this)"> Option
+              1</label>
+          </div>
+          <div class="bg-blue-900 rounded-md px-4 py-1 text-white">
+            <label class="cursor-pointer"><input type="checkbox" onclick="limitCheckboxSelection(this)"> Option
+              1</label>
+          </div>
+        </div>
+      </div>
 
       <div class="mb-4">
         <label for="phone" class="block text-md font-medium text-blue-900 mb-2">Phone No</label>
         <input type="text" id="phone" name="phone"
           class="block bg-gray-50 appearance-none border rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
-          placeholder="Enter phone no" />
+          placeholder="+16468145238" />
       </div>
 
       <!-- Modal for Location Selection -->
@@ -288,11 +309,21 @@
 
     <!-- Social Media and Copyright -->
     <div class="mt-6 border-t border-white pt-4 text-sm flex  items-center justify-center max-w-screen-lg mx-auto">
-      <p class="text-center">&copy; 2024 Brand Name. All rights reserved.</p>
+      <p class="text-center">&copy; 2025 Brand Name. All rights reserved.</p>
 
     </div>
   </footer>
   <script>
+
+    function limitCheckboxSelection(checkbox) {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach((box) => {
+        if (box !== checkbox) {
+          box.disabled = checkbox.checked;
+        }
+      });
+    }
+
     function toggleDropdown() {
       const dropdown = document.getElementById("dropdownMenu");
       dropdown.classList.toggle("opacity-0");
