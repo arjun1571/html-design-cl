@@ -76,7 +76,7 @@
         <div class="md:flex items-center mt-2">
           <input type="text" id="location" name="location"
             class="block bg-gray-50 appearance-none border rounded-lg md:w-[70%] w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Bangladesh>Dhaka>Gazipur>Rent a Car" disabled />
+            placeholder="Bangladesh > Dhaka > Gazipur > Rent a Car" disabled />
           <button type="button" class="md:ml-4 md:mt-0 mt-2 px-4 py-1.5 bg-blue-900 text-white rounded shadow flex"
             onclick="openModal()">
             Choose Location
@@ -120,7 +120,7 @@
               Select Location
             </h2>
             <p class="absolute top-0 right-0 text-lg font-semibold cursor-pointer text-blue-900" onclick="closeModal()">
-              X
+              <img src="./image/close.png" class="h-5 w-5" />
             </p>
           </div>
 
@@ -228,7 +228,7 @@
           <!-- Save Location Button -->
           <div class="text-right">
             <button type="button"
-              class="px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 focus:ring-4 focus:ring-blue-300"
+              class="px-4 py-2 bg-blue-900 text-white rounded shadow  focus:ring-4 focus:ring-blue-900"
               onclick="saveLocation()">
               Set Changes
             </button>
@@ -320,7 +320,7 @@
           [{ list: "ordered" }, { list: "bullet" }],
           [{ header: [1, 2, 3, false] }],
           [{ color: [] }, { background: [] }],
-          ["link", "image"],
+          ["link"],
         ],
       },
     });
@@ -389,9 +389,9 @@
     }
 
     function saveLocation() {
-      const location =
-        document.querySelector('input[name="location"]:checked')?.value || "";
-      document.getElementById("location").value = location;
+      const selectedLocation = document.querySelector('input[name="location"]:checked')?.value || "";
+      const formattedLocation = selectedLocation.replace(/>/g, " > ");
+      document.getElementById("location").value = formattedLocation;
       closeModal();
     }
   </script>
