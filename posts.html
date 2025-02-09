@@ -445,16 +445,37 @@
       document.getElementById("location-modal").classList.add("hidden");
     }
 
-    function toggleCollapse(id) {
-      const element = document.getElementById(id);
-      element.classList.toggle("hidden");
-    }
 
     function saveLocation() {
       const location = document.querySelector('input[name="location"]:checked')?.value || "";
       document.getElementById("location").value = location;
       closeModal();
     }
+
+
+
+    // toggle behavior remove this function 
+
+        // function toggleCollapse(id) {
+    //   const element = document.getElementById(id);
+    //   element.classList.toggle("hidden");
+    // }
+
+
+    // toggle behavior use this function 
+
+    function toggleCollapse(id) {
+        const element = document.getElementById(id);
+        const parent = element.parentElement; 
+
+        Array.from(parent.children).forEach(child => {
+          if (child.id && child.id !== id) {
+            child.classList.add("hidden");
+          }
+        });
+        element.classList.toggle("hidden");
+      }
+
   </script>
 </body>
 
