@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tailwind Modal Example with 10 Countries</title>
+    <title>Tailwind Modal Example with Message at Top</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-100 flex justify-center items-center min-h-screen">
@@ -20,6 +20,9 @@
           &times;
         </button>
 
+        <!-- MESSAGE BAR -->
+        <div id="messageBar" class="hidden mb-4 p-3 rounded text-sm font-medium"></div>
+
         <h2 class="text-xl font-bold text-blue-900 mb-4">Select Location</h2>
 
         <button
@@ -30,6 +33,7 @@
         </button>
 
         <div id="country-collapse" class="hidden space-y-2 pl-4">
+          <!-- Bangladesh -->
           <button
             onclick="toggleCollapse('bangladesh-collapse')"
             class="w-full text-left bg-blue-800 text-white px-4 py-2 rounded"
@@ -44,14 +48,24 @@
               Dhaka <span class="float-right">▼</span>
             </button>
             <div id="dhaka-collapse" class="hidden pl-4 space-y-2 flex flex-col">
-              <label
-                ><input type="radio" name="location" value="Bangladesh>Dhaka>Rent a Car" class="mr-2" />Rent a
-                Car</label
-              >
-              <label
-                ><input type="radio" name="location" value="Bangladesh>Dhaka>Real Estate" class="mr-2" />Real
-                Estate</label
-              >
+              <label>
+                <input
+                  type="checkbox"
+                  name="location"
+                  value="Bangladesh > Dhaka > Rent a Car"
+                  class="mr-2 location-checkbox"
+                />
+                Rent a Car
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="location"
+                  value="Bangladesh > Dhaka > Real Estate"
+                  class="mr-2 location-checkbox"
+                />
+                Real Estate
+              </label>
             </div>
 
             <button
@@ -61,15 +75,24 @@
               Chittagong <span class="float-right">▼</span>
             </button>
             <div id="chittagong-collapse" class="hidden pl-4 space-y-2 flex flex-col">
-              <label
-                ><input
-                  type="radio"
+              <label>
+                <input
+                  type="checkbox"
                   name="location"
-                  value="Bangladesh>Chittagong>Education"
-                  class="mr-2"
-                />Education</label
-              >
-              <label><input type="radio" name="location" value="Bangladesh>Chittagong>Jobs" class="mr-2" />Jobs</label>
+                  value="Bangladesh > Chittagong > Education"
+                  class="mr-2 location-checkbox"
+                />
+                Education
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="location"
+                  value="Bangladesh > Chittagong > Jobs"
+                  class="mr-2 location-checkbox"
+                />
+                Jobs
+              </label>
             </div>
           </div>
 
@@ -88,10 +111,19 @@
               Mumbai <span class="float-right">▼</span>
             </button>
             <div id="mumbai-collapse" class="hidden pl-4 space-y-2 flex flex-col">
-              <label><input type="radio" name="location" value="India>Mumbai>IT" class="mr-2" />IT</label>
-              <label
-                ><input type="radio" name="location" value="India>Mumbai>Healthcare" class="mr-2" />Healthcare</label
-              >
+              <label>
+                <input type="checkbox" name="location" value="India > Mumbai > IT" class="mr-2 location-checkbox" />
+                IT
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="location"
+                  value="India > Mumbai > Healthcare"
+                  class="mr-2 location-checkbox"
+                />
+                Healthcare
+              </label>
             </div>
 
             <button
@@ -101,110 +133,30 @@
               Delhi <span class="float-right">▼</span>
             </button>
             <div id="delhi-collapse" class="hidden pl-4 space-y-2 flex flex-col">
-              <label><input type="radio" name="location" value="India>Delhi>Education" class="mr-2" />Education</label>
-              <label><input type="radio" name="location" value="India>Delhi>Fashion" class="mr-2" />Fashion</label>
-            </div>
-          </div>
-
-          <!-- Pakistan -->
-          <button
-            onclick="toggleCollapse('pakistan-collapse')"
-            class="w-full text-left bg-blue-800 text-white px-4 py-2 rounded"
-          >
-            Pakistan <span class="float-right">▼</span>
-          </button>
-          <div id="pakistan-collapse" class="hidden pl-4 space-y-2">
-            <button
-              onclick="toggleCollapse('karachi-collapse')"
-              class="w-full text-left bg-blue-700 text-white px-4 py-2 rounded"
-            >
-              Karachi <span class="float-right">▼</span>
-            </button>
-            <div id="karachi-collapse" class="hidden pl-4 space-y-2 flex flex-col">
-              <label><input type="radio" name="location" value="Pakistan>Karachi>Textile" class="mr-2" />Textile</label>
-              <label
-                ><input type="radio" name="location" value="Pakistan>Karachi>Real Estate" class="mr-2" />Real
-                Estate</label
-              >
-            </div>
-
-            <button
-              onclick="toggleCollapse('lahore-collapse')"
-              class="w-full text-left bg-blue-700 text-white px-4 py-2 rounded"
-            >
-              Lahore <span class="float-right">▼</span>
-            </button>
-            <div id="lahore-collapse" class="hidden pl-4 space-y-2 flex flex-col">
-              <label
-                ><input type="radio" name="location" value="Pakistan>Lahore>Education" class="mr-2" />Education</label
-              >
-              <label><input type="radio" name="location" value="Pakistan>Lahore>Tourism" class="mr-2" />Tourism</label>
-            </div>
-          </div>
-
-          <!-- Nepal -->
-          <button
-            onclick="toggleCollapse('nepal-collapse')"
-            class="w-full text-left bg-blue-800 text-white px-4 py-2 rounded"
-          >
-            Nepal <span class="float-right">▼</span>
-          </button>
-          <div id="nepal-collapse" class="hidden pl-4 space-y-2">
-            <button
-              onclick="toggleCollapse('kathmandu-collapse')"
-              class="w-full text-left bg-blue-700 text-white px-4 py-2 rounded"
-            >
-              Kathmandu <span class="float-right">▼</span>
-            </button>
-            <div id="kathmandu-collapse" class="hidden pl-4 space-y-2 flex flex-col">
-              <label><input type="radio" name="location" value="Nepal>Kathmandu>Tourism" class="mr-2" />Tourism</label>
-              <label
-                ><input type="radio" name="location" value="Nepal>Kathmandu>Education" class="mr-2" />Education</label
-              >
-            </div>
-
-            <button
-              onclick="toggleCollapse('pokhara-collapse')"
-              class="w-full text-left bg-blue-700 text-white px-4 py-2 rounded"
-            >
-              Pokhara <span class="float-right">▼</span>
-            </button>
-            <div id="pokhara-collapse" class="hidden pl-4 space-y-2 flex flex-col">
-              <label><input type="radio" name="location" value="Nepal>Pokhara>Hotels" class="mr-2" />Hotels</label>
-              <label><input type="radio" name="location" value="Nepal>Pokhara>Travel" class="mr-2" />Travel</label>
-            </div>
-          </div>
-
-          <button
-            onclick="toggleCollapse('srilanka-collapse')"
-            class="w-full text-left bg-blue-800 text-white px-4 py-2 rounded"
-          >
-            Sri Lanka <span class="float-right">▼</span>
-          </button>
-          <div id="srilanka-collapse" class="hidden pl-4 space-y-2">
-            <button
-              onclick="toggleCollapse('colombo-collapse')"
-              class="w-full text-left bg-blue-700 text-white px-4 py-2 rounded"
-            >
-              Colombo <span class="float-right">▼</span>
-            </button>
-            <div id="colombo-collapse" class="hidden pl-4 space-y-2 flex flex-col">
-              <label><input type="radio" name="location" value="Sri Lanka>Colombo>Ports" class="mr-2" />Ports</label>
-              <label><input type="radio" name="location" value="Sri Lanka>Colombo>IT" class="mr-2" />IT</label>
-            </div>
-
-            <button
-              onclick="toggleCollapse('kandy-collapse')"
-              class="w-full text-left bg-blue-700 text-white px-4 py-2 rounded"
-            >
-              Kandy <span class="float-right">▼</span>
-            </button>
-            <div id="kandy-collapse" class="hidden pl-4 space-y-2 flex flex-col">
-              <label><input type="radio" name="location" value="Sri Lanka>Kandy>Tea" class="mr-2" />Tea</label>
-              <label><input type="radio" name="location" value="Sri Lanka>Kandy>Tourism" class="mr-2" />Tourism</label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="location"
+                  value="India > Delhi > Education"
+                  class="mr-2 location-checkbox"
+                />
+                Education
+              </label>
+              <label>
+                <input type="checkbox" name="location" value="India > Delhi > Fashion" class="mr-2 location-checkbox" />
+                Fashion
+              </label>
             </div>
           </div>
         </div>
+
+        <!-- Selected locations in a <p> tag -->
+        <section>
+          <div id="selectedLocationsContainer" class="mt-6 p-4 border border-blue-300 rounded bg-blue-50 text-blue-900">
+            <h3 class="font-semibold mb-2">Selected Locations:</h3>
+            <p id="selectedLocationsText" class="text-sm italic text-blue-700">None selected yet.</p>
+          </div>
+        </section>
 
         <section class="mt-6 text-right">
           <button
@@ -220,13 +172,17 @@
     <script>
       const openModalBtn = document.getElementById("openModalBtn");
       const locationModal = document.getElementById("locationModal");
+      const messageBar = document.getElementById("messageBar");
+      const selectedLocationsText = document.getElementById("selectedLocationsText");
 
       openModalBtn.addEventListener("click", () => {
         locationModal.classList.remove("hidden");
+        clearMessage();
       });
 
       function closeModal() {
         locationModal.classList.add("hidden");
+        clearMessage();
       }
 
       function toggleCollapse(id) {
@@ -245,15 +201,58 @@
       }
 
       function saveLocation() {
-        const selected = document.querySelector('input[name="location"]:checked');
-        if (selected) {
-          alert(`You selected: ${selected.value}`);
-          closeModal();
+        const selectedCheckboxes = document.querySelectorAll(".location-checkbox:checked");
+
+        if (selectedCheckboxes.length > 0) {
+          const locations = Array.from(selectedCheckboxes).map((checkbox) => checkbox.value);
+
+          // Show success message
+          showMessage(`Successfully saved ${locations.length} location(s)!`, "success");
+
+          // Optional: close modal after a delay
+          setTimeout(() => {
+            closeModal();
+          }, 1000);
         } else {
-          alert("Please select a location.");
+          showMessage("Please select at least one location.", "error");
         }
       }
 
+      function showMessage(message, type) {
+        messageBar.textContent = message;
+        messageBar.classList.remove("hidden");
+
+        if (type === "error") {
+          messageBar.className = "mb-4 p-3 rounded text-sm font-medium bg-red-100 text-red-700 border border-red-300";
+        } else if (type === "success") {
+          messageBar.className =
+            "mb-4 p-3 rounded text-sm font-medium bg-green-100 text-green-700 border border-green-300";
+        }
+      }
+
+      function clearMessage() {
+        messageBar.textContent = "";
+        messageBar.classList.add("hidden");
+      }
+
+      // Update selected locations display
+      const checkboxes = document.querySelectorAll(".location-checkbox");
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", updateSelectedLocations);
+      });
+
+      function updateSelectedLocations() {
+        const selectedCheckboxes = document.querySelectorAll(".location-checkbox:checked");
+
+        if (selectedCheckboxes.length === 0) {
+          selectedLocationsText.textContent = "None selected yet.";
+        } else {
+          const locations = Array.from(selectedCheckboxes).map((checkbox) => checkbox.value);
+          selectedLocationsText.textContent = locations.join(", ");
+        }
+      }
+
+      // Close modal when clicking outside content
       window.addEventListener("click", function (event) {
         if (event.target === locationModal) {
           closeModal();

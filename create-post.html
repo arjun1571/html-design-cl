@@ -72,15 +72,27 @@
         <h1 class="text-2xl font-bold text-gray-800 mb-6">Create Post</h1>
 
         <!-- Post Title -->
-        <div class="mb-4">
-          <label for="post-title" class="block text-md font-medium text-blue-900 mb-2">Title</label>
-          <input
-            type="text"
-            id="post-title"
-            name="post-title"
-            class="block bg-gray-50 appearance-none border rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Enter post title"
-          />
+        <div class="flex items-center justify-between gap-4">
+          <div class="mb-4 w-4/5">
+            <label for="post-title" class="block text-md font-medium text-blue-900 mb-2">Title</label>
+            <input
+              type="text"
+              id="post-title"
+              name="post-title"
+              class="block bg-gray-50 appearance-none border rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Enter post title"
+            />
+          </div>
+          <div class="mb-4 w-1/5">
+            <label for="age" class="block text-md font-medium text-blue-900 mb-2">Age</label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              class="block bg-gray-50 appearance-none border rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              placeholder="Enter age"
+            />
+          </div>
         </div>
         <div class="mb-4 items-center">
           <label for="location" class="block text-md font-medium text-blue-900 mr-4">Location</label>
