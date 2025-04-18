@@ -1,217 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts</title>
+    <link href="./dist/styles.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Posts</title>
-  <link href="./dist/styles.css" rel="stylesheet" />
-</head>
-
-<body class="font-[Poppins]">
-  <nav class="bg-blue-900 border-b border-gray-300">
-    <div class="max-w-screen-lg mx-auto flex justify-between items-center py-4 md:px-0 px-4">
-      <a href="my-accout.html" class="text-xl font-semibold text-white">Brand Name</a>
-      <div class="flex items-center">
-        <div class="me-8">
-          <button>
-            <a href="create-post.html"
-              class="block px-4 py-0.5 font-semibold rounded-2xl text-blue-900 text-lg bg-white">Add Post</a>
-          </button>
+  <body class="font-[Poppins]">
+    <nav class="bg-blue-900 border-b border-gray-300">
+      <div class="max-w-screen-lg mx-auto flex justify-between items-center py-4 md:px-0 px-4">
+        <a href="my-accout.html" class="text-xl font-semibold text-white">Brand Name</a>
+        <div class="flex items-center">
+          <div class="me-8">
+            <button>
+              <a
+                href="create-post.html"
+                class="block px-4 py-0.5 font-semibold rounded-2xl text-blue-900 text-lg bg-white"
+                >Add Post</a
+              >
+            </button>
+          </div>
+          <div class="relative">
+            <button
+              id="dropdownButton"
+              class="flex items-center focus:outline-none bg-white rounded-lg"
+              onclick="toggleDropdown()"
+            >
+              <img src="/image/profile.png" alt="Profile Icon" class="w-10 h-10 rounded-full" />
+            </button>
+            <ul
+              id="dropdownMenu"
+              class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg opacity-0 invisible transition-opacity duration-200"
+            >
+              <li>
+                <a href="my-accout.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">My Account</a>
+              </li>
+              <li>
+                <a href="buy-cradit.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Buy Credit</a>
+              </li>
+              <li>
+                <a href="update-profile.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Update Profile</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Add Post</a>
+              </li>
+              <li>
+                <a href="user.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Users</a>
+              </li>
+              <li>
+                <a href="transaction.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Transaction</a>
+              </li>
+              <li>
+                <a href="contact-us.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Contact Us</a>
+              </li>
+              <li>
+                <a href="privacy-policy.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="login.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Logout</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="relative">
-          <button id="dropdownButton" class="flex items-center focus:outline-none bg-white rounded-lg"
-            onclick="toggleDropdown()">
-            <img src="/image/profile.png" alt="Profile Icon" class="w-10 h-10 rounded-full" />
-          </button>
-          <ul id="dropdownMenu"
-            class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg opacity-0 invisible transition-opacity duration-200">
+      </div>
+    </nav>
+    <main class="md:mt-2 mt-0 min-h-[80vh] md:p-2 p-4 max-w-screen-lg mx-auto">
+      <div class="flex flex-wrap items-center">
+        <h6 class="text-lg text-blue-900 font-semibold"><a href="">Home</a></h6>
+        <h6 class="px-2 text-lg text-blue-900 font-semibold">></h6>
+        <h6 class="text-lg text-blue-900 font-semibold">
+          <a href="">Birmingham</a>
+        </h6>
+        <h6 class="px-2 text-lg text-blue-900 font-semibold">></h6>
+        <h6 class="text-lg text-blue-900 font-semibold">
+          <a href="">Huntsville</a>
+        </h6>
+        <h6 class="px-2 text-lg text-blue-900 font-semibold">></h6>
+        <h6 class="text-lg text-blue-900 font-semibold">
+          <a href="">Writing</a>
+        </h6>
+      </div>
+      <div class="flex items-end justify-end gap-2">
+        <!-- List Icon -->
+        <div class="flex items-center gap-1 cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 text-blue-800"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 5.25h16.5M3.75 9.75h16.5M3.75 14.25h16.5M3.75 18.75h16.5"
+            />
+          </svg>
+        </div>
+
+        <!-- Gallery Icon -->
+        <div class="flex items-center gap-1 cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 text-blue-800"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 3h7.5v7.5H3V3zM13.5 3H21v7.5h-7.5V3zM3 13.5h7.5V21H3v-7.5zM13.5 13.5H21V21h-7.5v-7.5z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <section class="mt-5">
+        <!-- list view  -->
+        <div class="space-y-3">
+          <div class="flex gap-2">
+            <div>
+              <div class="bg-gray-200 rounded-md mr-1 border-yellow-300 border-2">
+                <p class="w-32 h-28">1</p>
+              </div>
+              <p class="text-sm font-semibold text-gray-500 text-center">Posted: 11:27 AM</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-blue-900">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, facilis? consectetur adipisicing elit.
+                Quae, facilis?
+              </h3>
+              <p class="text-xs text-blue-900">Lorem ipsum dolor sit amet.</p>
+              <p class="text-sm">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sequi quae corporis aperiam amet
+                magni necessitatibus id qui, dicta quo.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Temporibus sequi quae corporis aperiam amet magni necessitatibus id qui, dicta quo.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-2">
+            <div>
+              <div class="bg-gray-200 rounded-md mr-1 border-yellow-300 border-2">
+                <p class="w-32 h-28">1</p>
+              </div>
+              <p class="text-sm font-semibold text-gray-500 text-center">Posted: 11:27 AM</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-blue-900">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, facilis? consectetur adipisicing elit.
+                Quae, facilis?
+              </h3>
+              <p class="text-xs text-blue-900">Lorem ipsum dolor sit amet.</p>
+              <p class="text-sm">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sequi quae corporis aperiam amet
+                magni necessitatibus id qui, dicta quo.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Temporibus sequi quae corporis aperiam amet magni necessitatibus id qui, dicta quo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- galary view  -->
+        <div class="mt-20 grid md:grid-cols-4 grid-cols-1 gap-1">
+          <div class="">
+            <div>
+              <div class="bg-gray-200 rounded-md mr-1 border-yellow-300 border-2">
+                <p class="w-60 h-40">1</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-blue-900">Lorem, ipsum dolor sit amet consectetur</h3>
+              <p class="text-xs font-semibold text-gray-500">Posted: 11:27 AM</p>
+            </div>
+          </div>
+          <div class="">
+            <div>
+              <div class="bg-gray-200 rounded-md mr-1 border-yellow-300 border-2">
+                <p class="w-60 h-40">1</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-blue-900">Lorem, ipsum dolor sit amet consectetur</h3>
+              <p class="text-xs font-semibold text-gray-500">Posted: 11:27 AM</p>
+            </div>
+          </div>
+          <div class="">
+            <div>
+              <div class="bg-gray-200 rounded-md mr-1 border-yellow-300 border-2">
+                <p class="w-60 h-40">1</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-blue-900">Lorem, ipsum dolor sit amet consectetur</h3>
+              <p class="text-xs font-semibold text-gray-500">Posted: 11:27 AM</p>
+            </div>
+          </div>
+          <div class="">
+            <div>
+              <div class="bg-gray-200 rounded-md mr-1 border-yellow-300 border-2">
+                <p class="w-60 h-40">1</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-blue-900">Lorem, ipsum dolor sit amet consectetur</h3>
+              <p class="text-xs font-semibold text-gray-500">Posted: 11:27 AM</p>
+            </div>
+          </div>
+          <div class="">
+            <div>
+              <div class="bg-gray-200 rounded-md mr-1 border-yellow-300 border-2">
+                <p class="w-60 h-40">1</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-blue-900">Lorem, ipsum dolor sit amet consectetur</h3>
+              <p class="text-xs font-semibold text-gray-500">Posted: 11:27 AM</p>
+            </div>
+          </div>
+          <div class="">
+            <div>
+              <div class="bg-gray-200 rounded-md mr-1 border-yellow-300 border-2">
+                <p class="w-60 h-40">1</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-blue-900">Lorem, ipsum dolor sit amet consectetur</h3>
+              <p class="text-xs font-semibold text-gray-500">Posted: 11:27 AM</p>
+            </div>
+          </div>
+          <div class="">
+            <div>
+              <div class="bg-gray-200 rounded-md mr-1 border-yellow-300 border-2">
+                <p class="w-60 h-40">1</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-blue-900">Lorem, ipsum dolor sit amet consectetur</h3>
+              <p class="text-xs font-semibold text-gray-500">Posted: 11:27 AM</p>
+            </div>
+          </div>
+          <div class="">
+            <div>
+              <div class="bg-gray-200 rounded-md mr-1 border-yellow-300 border-2">
+                <p class="w-60 h-40">1</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-blue-900">Lorem, ipsum dolor sit amet consectetur</h3>
+              <p class="text-xs font-semibold text-gray-500">Posted: 11:27 AM</p>
+            </div>
+          </div>
+          <div class="">
+            <div>
+              <div class="bg-gray-200 rounded-md mr-1 border-yellow-300 border-2">
+                <p class="w-60 h-40">1</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-blue-900">Lorem, ipsum dolor sit amet consectetur</h3>
+              <p class="text-xs font-semibold text-gray-500">Posted: 11:27 AM</p>
+            </div>
+          </div>
+          <div class="">
+            <div>
+              <div class="bg-gray-200 rounded-md mr-1 border-yellow-300 border-2">
+                <p class="w-60 h-40">1</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-blue-900">Lorem, ipsum dolor sit amet consectetur</h3>
+              <p class="text-xs font-semibold text-gray-500">Posted: 11:27 AM</p>
+            </div>
+          </div>
+          <div class="">
+            <div>
+              <div class="bg-gray-200 rounded-md mr-1 border-yellow-300 border-2">
+                <p class="w-60 h-40">1</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-blue-900">Lorem, ipsum dolor sit amet consectetur</h3>
+              <p class="text-xs font-semibold text-gray-500">Posted: 11:27 AM</p>
+            </div>
+          </div>
+          <div class="">
+            <div>
+              <div class="bg-gray-200 rounded-md mr-1 border-yellow-300 border-2">
+                <p class="w-60 h-40">1</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-blue-900">Lorem, ipsum dolor sit amet consectetur</h3>
+              <p class="text-xs font-semibold text-gray-500">Posted: 11:27 AM</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination Component -->
+        <div class="mt-5 flex justify-center items-center">
+          <div aria-label="Page navigation">
+            <ul class="inline-flex space-x-2">
+              <li>
+                <a
+                  href="#"
+                  class="px-3 py-2 text-lg text-blue-900 bg-white border border-gray-300 rounded hover:bg-gray-200"
+                  aria-label="Previous"
+                >
+                  &laquo;
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="px-3 text-lg py-2 text-blue-900 bg-white border border-gray-300 rounded hover:bg-gray-200"
+                  >1</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="px-3 text-lg py-2 text-blue-900 bg-white border border-gray-300 rounded hover:bg-gray-200"
+                  >2</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="px-3 text-lg py-2 text-blue-900 bg-white border border-gray-300 rounded hover:bg-gray-200"
+                  >3</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="px-3 text-lg py-2 text-blue-900 bg-white border border-gray-300 rounded hover:bg-gray-200"
+                  >4</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="px-3 text-lg py-2 text-blue-900 bg-white border border-gray-300 rounded hover:bg-gray-200"
+                  >5</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="px-3 py-2 text-lg text-blue-900 bg-white border border-gray-300 rounded hover:bg-gray-200"
+                  aria-label="Next"
+                >
+                  &raquo;
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-blue-900 text-gray-300 p-6 mt-10">
+      <div class="max-w-screen-lg mx-auto grid gap-6 md:grid-cols-4 grid-cols-2">
+        <!-- About Section -->
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">About Brand</h3>
+          <p class="text-sm">
+            Brand Name is your go-to platform for classified listings. From local events to personal ads, discover
+            everything in one place.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="post.html" class="hover:underline">Contact Us</a></li>
             <li>
-              <a href="my-accout.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">My Account</a>
+              <a href="post.html" class="hover:underline">Privacy Policy</a>
             </li>
             <li>
-              <a href="buy-cradit.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Buy Credit</a>
-            </li>
-            <li>
-              <a href="update-profile.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Update Profile</a>
-            </li>
-            <li>
-              <a href="#" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Add Post</a>
-            </li>
-            <li>
-              <a href="user.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Users</a>
-            </li>
-            <li>
-              <a href="transaction.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Transaction</a>
-            </li>
-            <li>
-              <a href="contact-us.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Contact Us</a>
-            </li>
-            <li>
-              <a href="privacy-policy.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="login.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Logout</a>
+              <a href="post.html" class="hover:underline">Terms of Service</a>
             </li>
           </ul>
         </div>
-      </div>
-    </div>
-  </nav>
-  <main class="md:mt-2 mt-0 min-h-[80vh] md:p-2 p-4 max-w-screen-lg mx-auto">
-    <div class="flex flex-wrap items-center">
-      <h6 class="text-lg text-blue-900 font-semibold"><a href="">Home</a></h6>
-      <h6 class="px-2 text-lg text-blue-900 font-semibold">></h6>
-      <h6 class="text-lg text-blue-900 font-semibold">
-        <a href="">Birmingham</a>
-      </h6>
-      <h6 class="px-2 text-lg text-blue-900 font-semibold">></h6>
-      <h6 class="text-lg text-blue-900 font-semibold">
-        <a href="">Huntsville</a>
-      </h6>
-      <h6 class="px-2 text-lg text-blue-900 font-semibold">></h6>
-      <h6 class="text-lg text-blue-900 font-semibold">
-        <a href="">Writing</a>
-      </h6>
-    </div>
-    <section class="mt-3">
-      <ul class="space-y-3 min-h-[70vh]">
-        <!-- List of posts -->
-        <li class="bg-blue-100 rounded-md md:px-4 px-4 md:py-0.5 py-2">
-          <a href="post-details.html" class="text-lg font-semibold text-blue-900">
-            ★ Lisa(42), 🟢 online,📍 (5min away): "Test me for free...at my
-            place!" (sponsored) 👩
-          </a>
-          <p class="text-blue-900 my-1 md:ml-5 ml-1">
-            January 04, 2025 15:17:45
-          </p>
-        </li>
-        <li class="bg-blue-100 rounded-md md:px-4 px-4 md:py-0.5 py-2">
-          <a href="post-details.html" class="text-lg font-semibold text-blue-900">
-            ★ 💦 WET, HOO, Horny Place 🔥 💋 Looking for a good time ⭐️ 💋
-            (sponsored) 👩
-          </a>
-          <p class="text-blue-900 my-1 md:ml-5 ml-1">
-            January 04, 2025 15:17:45
-          </p>
-        </li>
-        <!-- Repeat similar list items -->
-      </ul>
 
-      <!-- Pagination Component -->
-      <div class="mt-5 flex justify-center items-center">
-        <div aria-label="Page navigation">
-          <ul class="inline-flex space-x-2">
-            <li>
-              <a href="#"
-                class="px-3 py-2 text-lg text-blue-900 bg-white border border-gray-300 rounded hover:bg-gray-200"
-                aria-label="Previous">
-                &laquo;
-              </a>
-            </li>
-            <li>
-              <a href="#"
-                class="px-3 text-lg py-2 text-blue-900 bg-white border border-gray-300 rounded hover:bg-gray-200">1</a>
-            </li>
-            <li>
-              <a href="#"
-                class="px-3 text-lg py-2 text-blue-900 bg-white border border-gray-300 rounded hover:bg-gray-200">2</a>
-            </li>
-            <li>
-              <a href="#"
-                class="px-3 text-lg py-2 text-blue-900 bg-white border border-gray-300 rounded hover:bg-gray-200">3</a>
-            </li>
-            <li>
-              <a href="#"
-                class="px-3 text-lg py-2 text-blue-900 bg-white border border-gray-300 rounded hover:bg-gray-200">4</a>
-            </li>
-            <li>
-              <a href="#"
-                class="px-3 text-lg py-2 text-blue-900 bg-white border border-gray-300 rounded hover:bg-gray-200">5</a>
-            </li>
-            <li>
-              <a href="#"
-                class="px-3 py-2 text-lg text-blue-900 bg-white border border-gray-300 rounded hover:bg-gray-200"
-                aria-label="Next">
-                &raquo;
-              </a>
-            </li>
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">Back Now</h3>
+          <ul class="space-y-2">
+            <li><a href="post.html" class="hover:underline">Back Me</a></li>
+            <li><a href="post.html" class="hover:underline">No Back</a></li>
+            <li><a href="post.html" class="hover:underline">Demo Now</a></li>
           </ul>
         </div>
-      </div>
-    </section>
-  </main>
-  <footer class="bg-blue-900 text-gray-300 p-6 mt-10">
-    <div class="max-w-screen-lg mx-auto grid gap-6 md:grid-cols-4 grid-cols-2">
-      <!-- About Section -->
-      <div>
-        <h3 class="text-lg font-semibold text-white mb-3">About Brand</h3>
-        <p class="text-sm">
-          Brand Name is your go-to platform for classified listings. From
-          local events to personal ads, discover everything in one place.
-        </p>
-      </div>
-      <div>
-        <h3 class="text-lg font-semibold text-white mb-3">Quick Links</h3>
-        <ul class="space-y-2">
-          <li><a href="post.html" class="hover:underline">Contact Us</a></li>
-          <li>
-            <a href="post.html" class="hover:underline">Privacy Policy</a>
-          </li>
-          <li>
-            <a href="post.html" class="hover:underline">Terms of Service</a>
-          </li>
-        </ul>
-      </div>
-
-
-
-      <!-- Quick Links -->
-      <div>
-        <h3 class="text-lg font-semibold text-white mb-3">Back Now</h3>
-        <ul class="space-y-2">
-          <li><a href="post.html" class="hover:underline">Back Me</a></li>
-          <li><a href="post.html" class="hover:underline">No Back</a></li>
-          <li><a href="post.html" class="hover:underline">Demo Now</a></li>
-        </ul>
-      </div>
-      <!-- Newsletter Signup -->
-      <div>
-        <h3 class="text-lg font-semibold text-white mb-3">Get in touch</h3>
-        <p class="text-sm mb-4">Example@gmail.com</p>
-        <div class="flex space-x-4 mt-3 md:mt-4">
-          <img src="/image/fb.png" class="h-7 w-7 text-white bg-white rounded-lg" />
-          <img src="/image//ins.png" class="h-7 w-7 text-white bg-white rounded-lg" />
-          <img src="/image//twit.png" class="h-7 w-7 text-white bg-white rounded-lg" />
+        <!-- Newsletter Signup -->
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">Get in touch</h3>
+          <p class="text-sm mb-4">Example@gmail.com</p>
+          <div class="flex space-x-4 mt-3 md:mt-4">
+            <img src="/image/fb.png" class="h-7 w-7 text-white bg-white rounded-lg" />
+            <img src="/image//ins.png" class="h-7 w-7 text-white bg-white rounded-lg" />
+            <img src="/image//twit.png" class="h-7 w-7 text-white bg-white rounded-lg" />
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Social Media and Copyright -->
-    <div class="mt-6 border-t border-white pt-4 text-sm flex  items-center justify-center max-w-screen-lg mx-auto">
-      <p class="text-center">&copy; 2025 Brand Name. All rights reserved.</p>
+      <!-- Social Media and Copyright -->
+      <div class="mt-6 border-t border-white pt-4 text-sm flex items-center justify-center max-w-screen-lg mx-auto">
+        <p class="text-center">&copy; 2025 Brand Name. All rights reserved.</p>
+      </div>
+    </footer>
 
-    </div>
-  </footer>
-
-  <script>
-    function toggleDropdown() {
-      const dropdown = document.getElementById("dropdownMenu");
-      dropdown.classList.toggle("opacity-0");
-      dropdown.classList.toggle("invisible");
-    }
-    // Close the dropdown when clicking outside of it
-    document.addEventListener("click", function (event) {
-      const dropdown = document.getElementById("dropdownMenu");
-      const button = document.getElementById("dropdownButton");
-      if (
-        !dropdown.contains(event.target) &&
-        !button.contains(event.target)
-      ) {
-        dropdown.classList.add("opacity-0", "invisible");
+    <script>
+      function toggleDropdown() {
+        const dropdown = document.getElementById("dropdownMenu");
+        dropdown.classList.toggle("opacity-0");
+        dropdown.classList.toggle("invisible");
       }
-    });
-  </script>
-</body>
-
+      // Close the dropdown when clicking outside of it
+      document.addEventListener("click", function (event) {
+        const dropdown = document.getElementById("dropdownMenu");
+        const button = document.getElementById("dropdownButton");
+        if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+          dropdown.classList.add("opacity-0", "invisible");
+        }
+      });
+    </script>
+  </body>
 </html>
