@@ -5,14 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Post</title>
     <link href="./dist/styles.css" rel="stylesheet" />
-    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet" />
+    <link
+      href="https://cdn.quilljs.com/1.3.7/quill.snow.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+    <style>
+      .upload-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .upload-box {
+        width: 110px;
+        height: 120px;
+        background-color: white;
+        border: 2px dashed #ccc;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+      .upload-box:hover {
+        border-color: #3b82f6;
+        background-color: #eff6ff;
+      }
+      .upload-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .remove-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: white;
+        color: red;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .upload-text {
+        text-align: center;
+        padding: 10px;
+      }
+    </style>
   </head>
 
   <body class="bg-gray-100">
     <nav class="bg-blue-900 border-b border-gray-300">
-      <div class="max-w-screen-lg mx-auto flex justify-between items-center py-4 md:px-0 px-4">
-        <a href="my-accout.html" class="text-xl font-semibold text-white">Brand Name</a>
+      <div
+        class="max-w-screen-lg mx-auto flex justify-between items-center py-4 md:px-0 px-4"
+      >
+        <a href="my-accout.html" class="text-xl font-semibold text-white"
+          >Brand Name</a
+        >
         <div class="flex items-center">
           <div class="me-8">
             <button>
@@ -29,38 +86,78 @@
               class="flex items-center focus:outline-none bg-white rounded-lg"
               onclick="toggleDropdown()"
             >
-              <img src="/image/profile.png" alt="Profile Icon" class="w-10 h-10 rounded-full" />
+              <img
+                src="/image/profile.png"
+                alt="Profile Icon"
+                class="w-10 h-10 rounded-full"
+              />
             </button>
             <ul
               id="dropdownMenu"
               class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg opacity-0 invisible transition-opacity duration-200"
             >
               <li>
-                <a href="my-accout.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">My Account</a>
+                <a
+                  href="my-accout.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >My Account</a
+                >
               </li>
               <li>
-                <a href="buy-cradit.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Buy Credit</a>
+                <a
+                  href="buy-cradit.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Buy Credit</a
+                >
               </li>
               <li>
-                <a href="update-profile.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Update Profile</a>
+                <a
+                  href="update-profile.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Update Profile</a
+                >
               </li>
               <li>
-                <a href="create-post.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Add Post</a>
+                <a
+                  href="create-post.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Add Post</a
+                >
               </li>
               <li>
-                <a href="user.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Users</a>
+                <a
+                  href="user.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Users</a
+                >
               </li>
               <li>
-                <a href="transaction.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Transaction</a>
+                <a
+                  href="transaction.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Transaction</a
+                >
               </li>
               <li>
-                <a href="contact-us.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Contact Us</a>
+                <a
+                  href="contact-us.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Contact Us</a
+                >
               </li>
               <li>
-                <a href="privacy-policy.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Privacy Policy</a>
+                <a
+                  href="privacy-policy.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Privacy Policy</a
+                >
               </li>
               <li>
-                <a href="login.html" class="block px-4 py-2 text-blue-900 hover:bg-gray-100">Logout</a>
+                <a
+                  href="login.html"
+                  class="block px-4 py-2 text-blue-900 hover:bg-gray-100"
+                  >Logout</a
+                >
               </li>
             </ul>
           </div>
@@ -74,7 +171,11 @@
         <!-- Post Title -->
         <div class="flex items-center justify-between gap-4">
           <div class="mb-4 w-4/5">
-            <label for="post-title" class="block text-md font-medium text-blue-900 mb-2">Title</label>
+            <label
+              for="post-title"
+              class="block text-md font-medium text-blue-900 mb-2"
+              >Title</label
+            >
             <input
               type="text"
               id="post-title"
@@ -84,7 +185,11 @@
             />
           </div>
           <div class="mb-4 w-1/5">
-            <label for="age" class="block text-md font-medium text-blue-900 mb-2">Age</label>
+            <label
+              for="age"
+              class="block text-md font-medium text-blue-900 mb-2"
+              >Age</label
+            >
             <input
               type="number"
               id="age"
@@ -95,7 +200,11 @@
           </div>
         </div>
         <div class="mb-4 items-center">
-          <label for="location" class="block text-md font-medium text-blue-900 mr-4">Location</label>
+          <label
+            for="location"
+            class="block text-md font-medium text-blue-900 mr-4"
+            >Location</label
+          >
           <div class="md:flex items-center mt-2">
             <input
               type="text"
@@ -117,64 +226,241 @@
 
         <!-- Description -->
         <div class="mb-4">
-          <label for="description" class="block text-md font-medium text-blue-900 mb-2">Description</label>
-          <!-- Container for Quill Editor -->
-          <div id="editor-container" class="bg-gray-50 border rounded-b-lg w-full px-3 py-2 text-blue-900"></div>
-        </div>
-
-        <!-- Image Upload -->
-        <div>
-          <label for="image" class="block text-md font-medium text-blue-900 mb-2">Image</label>
-
-          <div
-            class="border-2 border-dashed border-gray-300 rounded-lg bg-white p-6 text-center text-gray-600 cursor-pointer hover:border-blue-400 hover:bg-blue-50"
+          <label
+            for="description"
+            class="block text-md font-medium text-blue-900 mb-2"
+            >Description</label
           >
-            <div id="uploadBox" class="pb-4">
-              <p>Click or Drag & Drop Images Here</p>
-            </div>
-            <div id="preview" class="flex flex-wrap gap-4"></div>
-          </div>
-
-          <input id="fileInput" type="file" multiple accept="image/*" class="hidden" />
+          <!-- Container for Quill Editor -->
+          <div
+            id="editor-container"
+            class="bg-gray-50 border rounded-b-lg w-full px-3 py-2 text-blue-900"
+          ></div>
         </div>
+
+        <div>
+          <label class="block text-md font-medium text-blue-900 mb-2"
+            >Images (Upload up to 5 images)</label
+          >
+
+          <div class="upload-container">
+            <!-- Image Box 1 -->
+            <div class="upload-box" onclick="openFileInput(1)">
+              <div id="upload-text-1" class="upload-text text-xs">
+                Click to upload Image
+              </div>
+              <div id="preview-1" class="hidden"></div>
+              <input
+                type="file"
+                id="fileInput-1"
+                class="hidden"
+                accept="image/*"
+                onchange="handleFileSelect(1, this.files)"
+              />
+            </div>
+
+            <!-- Image Box 2 -->
+            <div class="upload-box" onclick="openFileInput(2)">
+              <div id="upload-text-2" class="upload-text text-xs">
+                Click to upload Image
+              </div>
+              <div id="preview-2" class="hidden"></div>
+              <input
+                type="file"
+                id="fileInput-2"
+                class="hidden"
+                accept="image/*"
+                onchange="handleFileSelect(2, this.files)"
+              />
+            </div>
+
+            <!-- Image Box 3 -->
+            <div class="upload-box" onclick="openFileInput(3)">
+              <div id="upload-text-3" class="upload-text text-xs">
+                Click to upload Image
+              </div>
+              <div id="preview-3" class="hidden"></div>
+              <input
+                type="file"
+                id="fileInput-3"
+                class="hidden"
+                accept="image/*"
+                onchange="handleFileSelect(3, this.files)"
+              />
+            </div>
+
+            <!-- Image Box 4 -->
+            <div class="upload-box" onclick="openFileInput(4)">
+              <div id="upload-text-4" class="upload-text text-xs">
+                Click to upload Image
+              </div>
+              <div id="preview-4" class="hidden"></div>
+              <input
+                type="file"
+                id="fileInput-4"
+                class="hidden"
+                accept="image/*"
+                onchange="handleFileSelect(4, this.files)"
+              />
+            </div>
+
+            <!-- Image Box 5 -->
+            <div class="upload-box" onclick="openFileInput(5)">
+              <div id="upload-text-5" class="upload-text text-xs">
+                Click to upload Image
+              </div>
+              <div id="preview-5" class="hidden"></div>
+              <input
+                type="file"
+                id="fileInput-5"
+                class="hidden"
+                accept="image/*"
+                onchange="handleFileSelect(5, this.files)"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-md font-medium text-blue-900 mb-2"
+            >Videos (Upload up to 5 videos)</label
+          >
+
+          <div class="upload-container">
+            <!-- Video Box 1 -->
+            <div class="upload-box" onclick="openVideoInput(1)">
+              <div id="video-upload-text-1" class="upload-text">
+                <div class="video-icon">▶️</div>
+                <div class="text-xs">Click to upload video</div>
+              </div>
+              <div id="video-preview-1" class="hidden w-full h-full"></div>
+              <input
+                type="file"
+                id="videoInput-1"
+                class="hidden"
+                accept="video/*"
+                onchange="handleVideoSelect(1, this.files)"
+              />
+            </div>
+
+            <!-- Video Box 2 -->
+            <div class="upload-box" onclick="openVideoInput(2)">
+              <div id="video-upload-text-2" class="upload-text">
+                <div class="video-icon">▶️</div>
+                <div class="text-xs">Click to upload video</div>
+              </div>
+              <div id="video-preview-2" class="hidden w-full h-full"></div>
+              <input
+                type="file"
+                id="videoInput-2"
+                class="hidden"
+                accept="video/*"
+                onchange="handleVideoSelect(2, this.files)"
+              />
+            </div>
+
+            <!-- Video Box 3 -->
+            <div class="upload-box" onclick="openVideoInput(3)">
+              <div id="video-upload-text-3" class="upload-text">
+                <div class="video-icon">▶️</div>
+                <div class="text-xs">Click to upload video</div>
+              </div>
+              <div id="video-preview-3" class="hidden w-full h-full"></div>
+              <input
+                type="file"
+                id="videoInput-3"
+                class="hidden"
+                accept="video/*"
+                onchange="handleVideoSelect(3, this.files)"
+              />
+            </div>
+
+            <!-- Video Box 4 -->
+            <div class="upload-box" onclick="openVideoInput(4)">
+              <div id="video-upload-text-4" class="upload-text">
+                <div class="video-icon">▶️</div>
+                <div class="text-xs">Click to upload video</div>
+              </div>
+              <div id="video-preview-4" class="hidden w-full h-full"></div>
+              <input
+                type="file"
+                id="videoInput-4"
+                class="hidden"
+                accept="video/*"
+                onchange="handleVideoSelect(4, this.files)"
+              />
+            </div>
+
+            <!-- Video Box 5 -->
+            <div class="upload-box" onclick="openVideoInput(5)">
+              <div id="video-upload-text-5" class="upload-text">
+                <div class="video-icon">▶️</div>
+                <div class="text-xs">Click to upload video</div>
+              </div>
+              <div id="video-preview-5" class="hidden w-full h-full"></div>
+              <input
+                type="file"
+                id="videoInput-5"
+                class="hidden"
+                accept="video/*"
+                onchange="handleVideoSelect(5, this.files)"
+              />
+            </div>
+          </div>
+        </div>
+
         <div class="mb-4">
-          <label for="post-title" class="block text-md font-medium text-blue-900 mb-2">Feature Post</label>
+          <label
+            for="post-title"
+            class="block text-md font-medium text-blue-900 mb-2"
+            >Feature Post</label
+          >
           <div class="flex flex-wrap gap-5 mt-2">
             <div class="bg-blue-900 rounded-md px-4 py-1 text-white">
               <label class="cursor-pointer"
-                ><input type="checkbox" onclick="limitCheckboxSelection(this)" /> Option 1</label
+                ><input
+                  type="checkbox"
+                  onclick="limitCheckboxSelection(this)"
+                />
+                Option 1</label
               >
             </div>
             <div class="bg-blue-900 rounded-md px-4 py-1 text-white">
               <label class="cursor-pointer"
-                ><input type="checkbox" onclick="limitCheckboxSelection(this)" /> Option 1</label
+                ><input
+                  type="checkbox"
+                  onclick="limitCheckboxSelection(this)"
+                />
+                Option 1</label
               >
             </div>
             <div class="bg-blue-900 rounded-md px-4 py-1 text-white">
               <label class="cursor-pointer"
-                ><input type="checkbox" onclick="limitCheckboxSelection(this)" /> Option 1</label
+                ><input
+                  type="checkbox"
+                  onclick="limitCheckboxSelection(this)"
+                />
+                Option 1</label
               >
             </div>
             <div class="bg-blue-900 rounded-md px-4 py-1 text-white">
               <label class="cursor-pointer"
-                ><input type="checkbox" onclick="limitCheckboxSelection(this)" /> Option 1</label
+                ><input
+                  type="checkbox"
+                  onclick="limitCheckboxSelection(this)"
+                />
+                Option 1</label
               >
             </div>
           </div>
         </div>
 
-        <!-- <div class="mb-4">
-          <label for="phone" class="block text-md font-medium text-blue-900 mb-2">Phone No</label>
-          <input
-            type="number"
-            id="phone"
-            name="phone"
-            class="block bg-gray-50 appearance-none border rounded-lg w-full px-3 py-2 text-blue-900 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="+16468145238"
-          />
-        </div> -->
         <div class="mb-4">
-          <label for="phone" class="block text-md font-medium text-blue-900 mb-2">Phone No</label>
+          <label
+            for="phone"
+            class="block text-md font-medium text-blue-900 mb-2"
+            >Phone No</label
+          >
           <input
             type="number"
             id="phone"
@@ -183,15 +469,38 @@
             placeholder="+16468145238"
           />
         </div>
+        <div>
+          <label
+            for="phone"
+            class="block text-md font-medium text-blue-900 mb-2"
+          >
+            * Privacy and Legal
+          </label>
+          <div class="flex items-center my-3">
+            <input
+              type="checkbox"
+              id="terms"
+              name="terms"
+              class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+            />
+            <label for="terms" class="ml-2 block text-sm text-gray-900">
+              I agree to the Terms and Conditions
+            </label>
+          </div>
+        </div>
 
         <!-- Modal for Location Selection -->
         <div
           id="location-modal"
           class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center"
         >
-          <div class="bg-white md:w-[500px] w-72 p-6 rounded shadow-md max-h-screen overflow-y-scroll">
+          <div
+            class="bg-white md:w-[500px] w-72 p-6 rounded shadow-md max-h-screen overflow-y-scroll"
+          >
             <div class="flex items-center justify-between relative">
-              <h2 class="text-2xl font-bold mb-4 text-blue-900">Select Location</h2>
+              <h2 class="text-2xl font-bold mb-4 text-blue-900">
+                Select Location
+              </h2>
               <p
                 class="absolute top-0 right-0 text-lg font-semibold cursor-pointer text-blue-900"
                 onclick="closeModal()"
@@ -229,11 +538,21 @@
                       <div id="category-collapse-dhaka" class="mt-2 hidden">
                         <div class="pl-4">
                           <label class="block">
-                            <input type="radio" name="location" value="Bangladesh>Dhaka>Rent a Car" class="mr-2" />
+                            <input
+                              type="radio"
+                              name="location"
+                              value="Bangladesh>Dhaka>Rent a Car"
+                              class="mr-2"
+                            />
                             Rent a Car
                           </label>
                           <label class="block mt-1.5">
-                            <input type="radio" name="location" value="Bangladesh>Dhaka>Real Estate" class="mr-2" />
+                            <input
+                              type="radio"
+                              name="location"
+                              value="Bangladesh>Dhaka>Real Estate"
+                              class="mr-2"
+                            />
                             Real Estate
                           </label>
                         </div>
@@ -249,11 +568,21 @@
                       <div id="category-collapse-sylhet" class="mt-2 hidden">
                         <div class="pl-4">
                           <label class="block">
-                            <input type="radio" name="location" value="Bangladesh>Sylhet>Jobs" class="mr-2" />
+                            <input
+                              type="radio"
+                              name="location"
+                              value="Bangladesh>Sylhet>Jobs"
+                              class="mr-2"
+                            />
                             Jobs
                           </label>
                           <label class="block mt-1.5">
-                            <input type="radio" name="location" value="Bangladesh>Sylhet>Tourism" class="mr-2" />
+                            <input
+                              type="radio"
+                              name="location"
+                              value="Bangladesh>Sylhet>Tourism"
+                              class="mr-2"
+                            />
                             Tourism
                           </label>
                         </div>
@@ -281,11 +610,21 @@
                       <div id="category-collapse-mumbai" class="mt-2 hidden">
                         <div class="pl-4">
                           <label class="block">
-                            <input type="radio" name="location" value="India>Mumbai>IT" class="mr-2" />
+                            <input
+                              type="radio"
+                              name="location"
+                              value="India>Mumbai>IT"
+                              class="mr-2"
+                            />
                             IT
                           </label>
                           <label class="block mt-1">
-                            <input type="radio" name="location" value="India>Mumbai>Healthcare" class="mr-2" />
+                            <input
+                              type="radio"
+                              name="location"
+                              value="India>Mumbai>Healthcare"
+                              class="mr-2"
+                            />
                             Healthcare
                           </label>
                         </div>
@@ -300,11 +639,21 @@
                       <div id="category-collapse-delhi" class="mt-2 hidden">
                         <div class="pl-4">
                           <label class="block">
-                            <input type="radio" name="location" value="India>Delhi>Education" class="mr-2" />
+                            <input
+                              type="radio"
+                              name="location"
+                              value="India>Delhi>Education"
+                              class="mr-2"
+                            />
                             Education
                           </label>
                           <label class="block mt-1">
-                            <input type="radio" name="location" value="India>Delhi>Fashion" class="mr-2" />
+                            <input
+                              type="radio"
+                              name="location"
+                              value="India>Delhi>Fashion"
+                              class="mr-2"
+                            />
                             Fashion
                           </label>
                         </div>
@@ -331,11 +680,21 @@
                       <div id="category-collapse-mumbai1" class="mt-2 hidden">
                         <div class="pl-4">
                           <label class="block">
-                            <input type="radio" name="location" value="India>Mumbai>IT" class="mr-2" />
+                            <input
+                              type="radio"
+                              name="location"
+                              value="India>Mumbai>IT"
+                              class="mr-2"
+                            />
                             IT
                           </label>
                           <label class="block mt-1">
-                            <input type="radio" name="location" value="India>Mumbai>Healthcare" class="mr-2" />
+                            <input
+                              type="radio"
+                              name="location"
+                              value="India>Mumbai>Healthcare"
+                              class="mr-2"
+                            />
                             Healthcare
                           </label>
                         </div>
@@ -350,11 +709,21 @@
                       <div id="category-collapse-delhi1" class="mt-2 hidden">
                         <div class="pl-4">
                           <label class="block">
-                            <input type="radio" name="location" value="India>Delhi>Education" class="mr-2" />
+                            <input
+                              type="radio"
+                              name="location"
+                              value="India>Delhi>Education"
+                              class="mr-2"
+                            />
                             Education
                           </label>
                           <label class="block mt-1">
-                            <input type="radio" name="location" value="India>Delhi>Fashion" class="mr-2" />
+                            <input
+                              type="radio"
+                              name="location"
+                              value="India>Delhi>Fashion"
+                              class="mr-2"
+                            />
                             Fashion
                           </label>
                         </div>
@@ -377,17 +746,24 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="w-full bg-blue-900 text-white p-2 rounded-lg">Post</button>
+        <button
+          type="submit"
+          class="w-full bg-blue-900 text-white p-2 rounded-lg"
+        >
+          Publish
+        </button>
       </div>
     </div>
     <footer class="bg-blue-900 text-gray-300 p-6 mt-10">
-      <div class="max-w-screen-lg mx-auto grid gap-6 md:grid-cols-4 grid-cols-2">
+      <div
+        class="max-w-screen-lg mx-auto grid gap-6 md:grid-cols-4 grid-cols-2"
+      >
         <!-- About Section -->
         <div>
           <h3 class="text-lg font-semibold text-white mb-3">About Brand</h3>
           <p class="text-sm">
-            Brand Name is your go-to platform for classified listings. From local events to personal ads, discover
-            everything in one place.
+            Brand Name is your go-to platform for classified listings. From
+            local events to personal ads, discover everything in one place.
           </p>
         </div>
         <div>
@@ -417,15 +793,26 @@
           <h3 class="text-lg font-semibold text-white mb-3">Get in touch</h3>
           <p class="text-sm mb-4">Example@gmail.com</p>
           <div class="flex space-x-4 mt-3 md:mt-4">
-            <img src="/image/fb.png" class="h-7 w-7 text-white bg-white rounded-lg" />
-            <img src="/image//ins.png" class="h-7 w-7 text-white bg-white rounded-lg" />
-            <img src="/image//twit.png" class="h-7 w-7 text-white bg-white rounded-lg" />
+            <img
+              src="/image/fb.png"
+              class="h-7 w-7 text-white bg-white rounded-lg"
+            />
+            <img
+              src="/image//ins.png"
+              class="h-7 w-7 text-white bg-white rounded-lg"
+            />
+            <img
+              src="/image//twit.png"
+              class="h-7 w-7 text-white bg-white rounded-lg"
+            />
           </div>
         </div>
       </div>
 
       <!-- Social Media and Copyright -->
-      <div class="mt-6 border-t border-white pt-4 text-sm flex items-center justify-center max-w-screen-lg mx-auto">
+      <div
+        class="mt-6 border-t border-white pt-4 text-sm flex items-center justify-center max-w-screen-lg mx-auto"
+      >
         <p class="text-center">&copy; 2025 Brand Name. All rights reserved.</p>
       </div>
     </footer>
@@ -448,7 +835,10 @@
       document.addEventListener("click", function (event) {
         const dropdown = document.getElementById("dropdownMenu");
         const button = document.getElementById("dropdownButton");
-        if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+        if (
+          !dropdown.contains(event.target) &&
+          !button.contains(event.target)
+        ) {
           dropdown.classList.add("opacity-0", "invisible");
         }
       });
@@ -467,7 +857,8 @@
           ],
         },
       });
-      document.querySelector("#editor-container .ql-editor").style.height = "100px";
+      document.querySelector("#editor-container .ql-editor").style.height =
+        "100px";
 
       const uploadBox = document.getElementById("uploadBox");
       const fileInput = document.getElementById("fileInput");
@@ -478,7 +869,9 @@
         e.preventDefault();
         uploadBox.classList.add("border-blue-400", "bg-blue-50");
       });
-      uploadBox.addEventListener("dragleave", () => uploadBox.classList.remove("border-blue-400", "bg-blue-50"));
+      uploadBox.addEventListener("dragleave", () =>
+        uploadBox.classList.remove("border-blue-400", "bg-blue-50")
+      );
       uploadBox.addEventListener("drop", (e) => {
         e.preventDefault();
         uploadBox.classList.remove("border-blue-400", "bg-blue-50");
@@ -492,7 +885,8 @@
             const reader = new FileReader();
             reader.onload = (e) => {
               const container = document.createElement("div");
-              container.className = "relative w-20 h-20 rounded-md shadow-md overflow-hidden";
+              container.className =
+                "relative w-20 h-20 rounded-md shadow-md overflow-hidden";
 
               const img = document.createElement("img");
               img.src = e.target.result;
@@ -528,7 +922,297 @@
       }
 
       function saveLocation() {
-        const selectedLocation = document.querySelector('input[name="location"]:checked')?.value || "";
+        const selectedLocation =
+          document.querySelector('input[name="location"]:checked')?.value || "";
+        const formattedLocation = selectedLocation.replace(/>/g, " > ");
+        document.getElementById("location").value = formattedLocation;
+        closeModal();
+      }
+
+      function openFileInput(boxNumber) {
+        document.getElementById(`fileInput-${boxNumber}`).click();
+      }
+
+      // Function to handle file selection for specific box
+      function handleFileSelect(boxNumber, files) {
+        if (files && files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const previewDiv = document.getElementById(`preview-${boxNumber}`);
+            const uploadText = document.getElementById(
+              `upload-text-${boxNumber}`
+            );
+
+            uploadText.classList.add("hidden");
+            previewDiv.classList.remove("hidden");
+            previewDiv.innerHTML = `
+              <img src="${e.target.result}" alt="Preview">
+              <div class="remove-btn" onclick="removeImage(${boxNumber}, event)">×</div>
+            `;
+          };
+          reader.readAsDataURL(files[0]);
+        }
+      }
+
+      // Function to remove image from specific box
+      function removeImage(boxNumber, event) {
+        event.stopPropagation();
+        const previewDiv = document.getElementById(`preview-${boxNumber}`);
+        const uploadText = document.getElementById(`upload-text-${boxNumber}`);
+        const fileInput = document.getElementById(`fileInput-${boxNumber}`);
+
+        previewDiv.classList.add("hidden");
+        previewDiv.innerHTML = "";
+        uploadText.classList.remove("hidden");
+        fileInput.value = "";
+      }
+
+      // Single image upload functionality
+      const singleUploadBox = document.getElementById("singleUploadBox");
+      const singleFileInput = document.getElementById("singleFileInput");
+      const singlePreview = document.getElementById("singlePreview");
+
+      singleUploadBox.addEventListener("click", () => singleFileInput.click());
+      singleUploadBox.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        singleUploadBox.classList.add("border-blue-400", "bg-blue-50");
+      });
+      singleUploadBox.addEventListener("dragleave", () =>
+        singleUploadBox.classList.remove("border-blue-400", "bg-blue-50")
+      );
+      singleUploadBox.addEventListener("drop", (e) => {
+        e.preventDefault();
+        singleUploadBox.classList.remove("border-blue-400", "bg-blue-50");
+        handleSingleFile(e.dataTransfer.files);
+      });
+      singleFileInput.addEventListener("change", () =>
+        handleSingleFile(singleFileInput.files)
+      );
+
+      function removeSingleImage() {
+        singlePreview.innerHTML = "";
+        singleFileInput.value = "";
+      }
+
+      // Your existing JavaScript functions remain the same
+      function limitCheckboxSelection(checkbox) {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((box) => {
+          if (box !== checkbox) {
+            box.disabled = checkbox.checked;
+          }
+        });
+      }
+
+      function toggleDropdown() {
+        const dropdown = document.getElementById("dropdownMenu");
+        dropdown.classList.toggle("opacity-0");
+        dropdown.classList.toggle("invisible");
+      }
+
+      document.addEventListener("click", function (event) {
+        const dropdown = document.getElementById("dropdownMenu");
+        const button = document.getElementById("dropdownButton");
+        if (
+          !dropdown.contains(event.target) &&
+          !button.contains(event.target)
+        ) {
+          dropdown.classList.add("opacity-0", "invisible");
+        }
+      });
+
+      document.querySelector("#editor-container .ql-editor").style.height =
+        "100px";
+
+      function openModal() {
+        document.getElementById("location-modal").classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("location-modal").classList.add("hidden");
+      }
+
+      function toggleCollapse(id) {
+        const element = document.getElementById(id);
+        element.classList.toggle("hidden");
+      }
+
+      function saveLocation() {
+        const selectedLocation =
+          document.querySelector('input[name="location"]:checked')?.value || "";
+        const formattedLocation = selectedLocation.replace(/>/g, " > ");
+        document.getElementById("location").value = formattedLocation;
+        closeModal();
+      }
+
+      function openVideoInput(boxNumber) {
+        document.getElementById(`videoInput-${boxNumber}`).click();
+      }
+
+      // Function to handle video selection for specific box
+      function handleVideoSelect(boxNumber, files) {
+        if (files && files[0]) {
+          const videoFile = files[0];
+          const previewDiv = document.getElementById(
+            `video-preview-${boxNumber}`
+          );
+          const uploadText = document.getElementById(
+            `video-upload-text-${boxNumber}`
+          );
+
+          uploadText.classList.add("hidden");
+          previewDiv.classList.remove("hidden");
+
+          // Create video element
+          const video = document.createElement("video");
+          video.controls = true;
+          video.src = URL.createObjectURL(videoFile);
+
+          // Create video info
+          const videoInfo = document.createElement("div");
+          videoInfo.className = "video-info";
+          videoInfo.textContent = `${videoFile.name} (${formatFileSize(
+            videoFile.size
+          )})`;
+
+          // Create remove button
+          const removeBtn = document.createElement("div");
+          removeBtn.className = "remove-btn";
+          removeBtn.innerHTML = "×";
+          removeBtn.onclick = (e) => {
+            e.stopPropagation();
+            removeVideo(boxNumber);
+          };
+
+          previewDiv.innerHTML = "";
+          previewDiv.appendChild(video);
+          previewDiv.appendChild(videoInfo);
+          previewDiv.appendChild(removeBtn);
+        }
+      }
+
+      // Function to remove video from specific box
+      function removeVideo(boxNumber) {
+        const previewDiv = document.getElementById(
+          `video-preview-${boxNumber}`
+        );
+        const uploadText = document.getElementById(
+          `video-upload-text-${boxNumber}`
+        );
+        const videoInput = document.getElementById(`videoInput-${boxNumber}`);
+
+        previewDiv.classList.add("hidden");
+        previewDiv.innerHTML = "";
+        uploadText.classList.remove("hidden");
+        videoInput.value = "";
+      }
+
+      // Format file size
+      function formatFileSize(bytes) {
+        if (bytes === 0) return "0 Bytes";
+        const k = 1024;
+        const sizes = ["Bytes", "KB", "MB", "GB"];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+      }
+
+      // Single video upload functionality
+      const singleVideoUploadBox = document.getElementById(
+        "singleVideoUploadBox"
+      );
+      const singleVideoInput = document.getElementById("singleVideoInput");
+      const singleVideoPreview = document.getElementById("singleVideoPreview");
+
+      singleVideoUploadBox.addEventListener("click", () =>
+        singleVideoInput.click()
+      );
+      singleVideoUploadBox.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        singleVideoUploadBox.classList.add("border-blue-400", "bg-blue-50");
+      });
+      singleVideoUploadBox.addEventListener("dragleave", () =>
+        singleVideoUploadBox.classList.remove("border-blue-400", "bg-blue-50")
+      );
+      singleVideoUploadBox.addEventListener("drop", (e) => {
+        e.preventDefault();
+        singleVideoUploadBox.classList.remove("border-blue-400", "bg-blue-50");
+        handleSingleVideo(e.dataTransfer.files);
+      });
+      singleVideoInput.addEventListener("change", () =>
+        handleSingleVideo(singleVideoInput.files)
+      );
+
+      function handleSingleVideo(files) {
+        if (files && files[0]) {
+          const videoFile = files[0];
+          const videoUrl = URL.createObjectURL(videoFile);
+
+          singleVideoPreview.innerHTML = `
+            <div class="relative w-full max-w-md">
+              <video controls class="w-full rounded-lg shadow-md">
+                <source src="${videoUrl}" type="${videoFile.type}">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-info">${videoFile.name} (${formatFileSize(
+            videoFile.size
+          )})</div>
+              <button class="remove-btn" onclick="removeSingleVideo()">×</button>
+            </div>
+          `;
+        }
+      }
+
+      function removeSingleVideo() {
+        singleVideoPreview.innerHTML = "";
+        singleVideoInput.value = "";
+      }
+
+      // Your existing JavaScript functions remain the same
+      function limitCheckboxSelection(checkbox) {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((box) => {
+          if (box !== checkbox) {
+            box.disabled = checkbox.checked;
+          }
+        });
+      }
+
+      function toggleDropdown() {
+        const dropdown = document.getElementById("dropdownMenu");
+        dropdown.classList.toggle("opacity-0");
+        dropdown.classList.toggle("invisible");
+      }
+
+      document.addEventListener("click", function (event) {
+        const dropdown = document.getElementById("dropdownMenu");
+        const button = document.getElementById("dropdownButton");
+        if (
+          !dropdown.contains(event.target) &&
+          !button.contains(event.target)
+        ) {
+          dropdown.classList.add("opacity-0", "invisible");
+        }
+      });
+
+      document.querySelector("#editor-container .ql-editor").style.height =
+        "100px";
+
+      function openModal() {
+        document.getElementById("location-modal").classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("location-modal").classList.add("hidden");
+      }
+
+      function toggleCollapse(id) {
+        const element = document.getElementById(id);
+        element.classList.toggle("hidden");
+      }
+
+      function saveLocation() {
+        const selectedLocation =
+          document.querySelector('input[name="location"]:checked')?.value || "";
         const formattedLocation = selectedLocation.replace(/>/g, " > ");
         document.getElementById("location").value = formattedLocation;
         closeModal();
