@@ -7,7 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-100 flex justify-center items-center min-h-screen">
-    <button id="openModalBtn" class="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition">
+    <button
+      id="openModalBtn"
+      class="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition"
+    >
       🌍 Select Location
     </button>
 
@@ -15,13 +18,21 @@
       id="locationModal"
       class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center overflow-auto"
     >
-      <div class="bg-white w-11/12 md:w-[500px] p-6 rounded-lg relative shadow-lg max-h-[90vh] overflow-y-auto">
-        <button onclick="closeModal()" class="absolute top-4 right-4 text-blue-900 hover:text-red-500 text-2xl">
+      <div
+        class="bg-white w-11/12 md:w-[500px] p-6 rounded-lg relative shadow-lg max-h-[90vh] overflow-y-auto"
+      >
+        <button
+          onclick="closeModal()"
+          class="absolute top-4 right-4 text-blue-900 hover:text-red-500 text-2xl"
+        >
           &times;
         </button>
 
         <!-- MESSAGE BAR -->
-        <div id="messageBar" class="hidden mb-4 p-3 rounded text-sm font-medium"></div>
+        <div
+          id="messageBar"
+          class="hidden mb-4 p-3 rounded text-sm font-medium"
+        ></div>
 
         <h2 class="text-xl font-bold text-blue-900 mb-4">Select Location</h2>
 
@@ -47,7 +58,10 @@
             >
               Dhaka <span class="float-right">▼</span>
             </button>
-            <div id="dhaka-collapse" class="hidden pl-4 space-y-2 flex flex-col">
+            <div
+              id="dhaka-collapse"
+              class="hidden pl-4 space-y-2 flex flex-col"
+            >
               <label>
                 <input
                   type="checkbox"
@@ -74,7 +88,10 @@
             >
               Chittagong <span class="float-right">▼</span>
             </button>
-            <div id="chittagong-collapse" class="hidden pl-4 space-y-2 flex flex-col">
+            <div
+              id="chittagong-collapse"
+              class="hidden pl-4 space-y-2 flex flex-col"
+            >
               <label>
                 <input
                   type="checkbox"
@@ -110,9 +127,17 @@
             >
               Mumbai <span class="float-right">▼</span>
             </button>
-            <div id="mumbai-collapse" class="hidden pl-4 space-y-2 flex flex-col">
+            <div
+              id="mumbai-collapse"
+              class="hidden pl-4 space-y-2 flex flex-col"
+            >
               <label>
-                <input type="checkbox" name="location" value="India > Mumbai > IT" class="mr-2 location-checkbox" />
+                <input
+                  type="checkbox"
+                  name="location"
+                  value="India > Mumbai > IT"
+                  class="mr-2 location-checkbox"
+                />
                 IT
               </label>
               <label>
@@ -132,7 +157,10 @@
             >
               Delhi <span class="float-right">▼</span>
             </button>
-            <div id="delhi-collapse" class="hidden pl-4 space-y-2 flex flex-col">
+            <div
+              id="delhi-collapse"
+              class="hidden pl-4 space-y-2 flex flex-col"
+            >
               <label>
                 <input
                   type="checkbox"
@@ -143,7 +171,12 @@
                 Education
               </label>
               <label>
-                <input type="checkbox" name="location" value="India > Delhi > Fashion" class="mr-2 location-checkbox" />
+                <input
+                  type="checkbox"
+                  name="location"
+                  value="India > Delhi > Fashion"
+                  class="mr-2 location-checkbox"
+                />
                 Fashion
               </label>
             </div>
@@ -152,9 +185,14 @@
 
         <!-- Selected locations in a <p> tag -->
         <section>
-          <div id="selectedLocationsContainer" class="mt-6 p-4 border border-blue-300 rounded bg-blue-50 text-blue-900">
+          <div
+            id="selectedLocationsContainer"
+            class="mt-6 p-4 border border-blue-300 rounded bg-blue-50 text-blue-900"
+          >
             <h3 class="font-semibold mb-2">Selected Locations:</h3>
-            <p id="selectedLocationsText" class="text-sm italic text-blue-700">None selected yet.</p>
+            <p id="selectedLocationsText" class="text-sm italic text-blue-700">
+              None selected yet.
+            </p>
           </div>
         </section>
 
@@ -173,7 +211,9 @@
       const openModalBtn = document.getElementById("openModalBtn");
       const locationModal = document.getElementById("locationModal");
       const messageBar = document.getElementById("messageBar");
-      const selectedLocationsText = document.getElementById("selectedLocationsText");
+      const selectedLocationsText = document.getElementById(
+        "selectedLocationsText"
+      );
 
       openModalBtn.addEventListener("click", () => {
         locationModal.classList.remove("hidden");
@@ -201,13 +241,20 @@
       }
 
       function saveLocation() {
-        const selectedCheckboxes = document.querySelectorAll(".location-checkbox:checked");
+        const selectedCheckboxes = document.querySelectorAll(
+          ".location-checkbox:checked"
+        );
 
         if (selectedCheckboxes.length > 0) {
-          const locations = Array.from(selectedCheckboxes).map((checkbox) => checkbox.value);
+          const locations = Array.from(selectedCheckboxes).map(
+            (checkbox) => checkbox.value
+          );
 
           // Show success message
-          showMessage(`Successfully saved ${locations.length} location(s)!`, "success");
+          showMessage(
+            `Successfully saved ${locations.length} location(s)!`,
+            "success"
+          );
 
           // Optional: close modal after a delay
           setTimeout(() => {
@@ -223,7 +270,8 @@
         messageBar.classList.remove("hidden");
 
         if (type === "error") {
-          messageBar.className = "mb-4 p-3 rounded text-sm font-medium bg-red-100 text-red-700 border border-red-300";
+          messageBar.className =
+            "mb-4 p-3 rounded text-sm font-medium bg-red-100 text-red-700 border border-red-300";
         } else if (type === "success") {
           messageBar.className =
             "mb-4 p-3 rounded text-sm font-medium bg-green-100 text-green-700 border border-green-300";
@@ -242,12 +290,16 @@
       });
 
       function updateSelectedLocations() {
-        const selectedCheckboxes = document.querySelectorAll(".location-checkbox:checked");
+        const selectedCheckboxes = document.querySelectorAll(
+          ".location-checkbox:checked"
+        );
 
         if (selectedCheckboxes.length === 0) {
           selectedLocationsText.textContent = "None selected yet.";
         } else {
-          const locations = Array.from(selectedCheckboxes).map((checkbox) => checkbox.value);
+          const locations = Array.from(selectedCheckboxes).map(
+            (checkbox) => checkbox.value
+          );
           selectedLocationsText.textContent = locations.join(", ");
         }
       }
